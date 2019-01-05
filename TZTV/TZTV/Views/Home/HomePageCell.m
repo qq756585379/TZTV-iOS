@@ -19,7 +19,30 @@
 
 @implementation HomePageCell
 
-- (IBAction)btnClicked:(UIButton *)sender {
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.bannerView.delegate = self;
+    self.bannerView.dataSource = self;
+    self.bannerView.disableCycle = NO;//可以循环
+    self.bannerView.autoRunPage = YES;
+    self.bannerView.interval = 3.f;
+    self.bannerView.disableClickEffect = YES;
+    [self.bannerView updateConstraintsIfNeeded];//强制更新约束
+    [self.bannerView layoutIfNeeded];//强制刷新界面
+    
+    YJPageControl *pageControl = [[YJPageControl alloc] init];
+    pageControl.hidesForSinglePage = YES;
+    pageControl.fillColor=YJNaviColor;
+    self.bannerView.pageControl = pageControl;
+    [self.bannerView addSubview:pageControl];
+    [self.bannerView reloadData];
+    [self.bannerView runCyclePageView];
+    [pageControl autoPinEdgesToSuperviewMarginsExcludingEdge:ALEdgeTop];
+    [pageControl autoSetDimension:ALDimensionHeight toSize:20];
+}
+
+- (IBAction)btnClicked:(UIButton *)sender
+{
     sender.enabled=NO;
     NSString *url=@"";
     if (sender==self.btn1) {
@@ -54,7 +77,8 @@
     }];
 }
 
--(void)exchangeUrl:(NSDictionary *)info{
+-(void)exchangeUrl:(NSDictionary *)info
+{
     NSString *url=[NSString stringWithFormat:getHistoryURL,info[@"live_id"],info[@"live_rtmp_play_url"]];
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         if ([json[@"code"] isEqualToNumber:@0]) {
@@ -69,32 +93,9 @@
     }];
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    self.bannerView.delegate = self;
-    self.bannerView.dataSource = self;
-    self.bannerView.disableCycle = NO;//可以循环
-    self.bannerView.autoRunPage = YES;
-    self.bannerView.interval = 3.f;
-    self.bannerView.disableClickEffect = YES;
-    // 强制刷新界面使布局精准
-    [self.bannerView updateConstraintsIfNeeded];//强制更新约束
-    [self.bannerView layoutIfNeeded];//强制刷新界面
-    
-    YJPageControl *pageControl = [[YJPageControl alloc] init];
-    pageControl.hidesForSinglePage = YES;
-    pageControl.fillColor=YJNaviColor;
-    self.bannerView.pageControl = pageControl;
-    [self.bannerView addSubview:pageControl];
-    [self.bannerView reloadData];
-    [self.bannerView runCyclePageView];
-    [pageControl autoPinEdgesToSuperviewMarginsExcludingEdge:ALEdgeTop];
-    [pageControl autoSetDimension:ALDimensionHeight toSize:20];
-}
-
 +(CGFloat)heightForCellData:(id)aData
 {
-    return 105 + ScreenW * 420 / 750;
+    return 105 + SCREEN_WIDTH * 420 / 750;
 }
 
 #pragma mark - OTSCyclePageViewDataSource
@@ -102,17 +103,16 @@
     return 5;
 }
 - (UIView *)pageView:(OTSCyclePageView *)aPageView pageAtIndex:(NSUInteger)aIndex{
-//    YJPlaceholderImageView *imageView = [[OTSPlaceholderImageView alloc] initWithFrame:aPageView.bounds];
-//    imageView.image=[UIImage imageNamed:[self images][aIndex]];
-//    return imageView;
-    
-    return nil;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:aPageView.bounds];
+    imageView.image = [UIImage imageNamed:[self images][aIndex]];
+    return imageView;
 }
 
 -(NSArray *)images
 {
     return @[@"1",@"5",@"3",@"2",@"4"];
 }
+
 #pragma mark - OTSCyclePageViewDelegate
 - (void)pageView:(OTSCyclePageView *)aPageView didSelectedPageAtIndex:(NSUInteger)aIndex{
     NSString *url=[NSString stringWithFormat:bannerLinkURL,(int)aIndex+1];
@@ -122,16 +122,8 @@
     [[YJTOOL getRootControllerSelectedVc] pushViewController:web animated:YES];
 }
 
-//功能:从当前页 切换另一页时,此方法会被调用
-- (void)pageView:(OTSCyclePageView *)pageView didChangeToIndex:(NSUInteger)aIndex{
-    
-}
-//功能:滑动到最后一页继续往后滑动
-- (void)pageViewScrollEndOfPage:(OTSCyclePageView *)aPageView{
-    
-}
-//数据暂时全写死
--(void)setDataArr:(NSArray *)dataArr{
+-(void)setDataArr:(NSArray *)dataArr
+{
     _dataArr=dataArr;
     if (dataArr.count==4) {
         NSDictionary *dict1=dataArr[0];
@@ -148,7 +140,5 @@
         self.label4.text=dict4[@"user_nicname"];
     }
 }
-
-
 
 @end

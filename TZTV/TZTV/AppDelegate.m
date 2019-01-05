@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //[[MapManager sharedManager] startSearchLocation];
+    [[MapManager sharedManager] startSearchLocation];
     [[UITextField appearance] setTintColor:[UIColor lightGrayColor]];
     
     //微信支付初始化

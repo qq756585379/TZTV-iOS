@@ -27,7 +27,8 @@
     [item setTitleTextAttributes:itemDisabledAttrs forState:UIControlStateDisabled];
 }
 
--(void)updateNavBarBg:(UIImage *)bgImg andShadowImage:(UIImage *)shadowImg{
+-(void)updateNavBarBg:(UIImage *)bgImg andShadowImage:(UIImage *)shadowImg
+{
     [self.navigationBar setBackgroundImage:bgImg forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setShadowImage:shadowImg];//去掉黑线，需要设置导航栏图片而不是barTintColor
 }
@@ -39,7 +40,8 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.childViewControllers.count > 0) { // 如果push进来的不是第一个控制器
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"return" highImage:@"return" target:self action:@selector(back)];
+        UIImage *image = [UIImage imageNamed:@"return"];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:image highImage:image target:self action:@selector(back)];
         viewController.hidesBottomBarWhenPushed = YES;
     }
     [super pushViewController:viewController animated:animated];

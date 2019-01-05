@@ -28,7 +28,7 @@
         tag.cornerRadius = 5;
         tag.borderWidth = 0;
         if (idx0==idx) {
-            tag.textColor = kWhiteColor;
+            tag.textColor = [UIColor whiteColor];
             tag.bgColor = YJNaviColor;
         }else{
             tag.textColor = HEXRGBCOLOR(0x333333);
@@ -55,7 +55,7 @@
         tag.cornerRadius = 5;
         tag.borderWidth = 0;
         if (idx1==idx) {
-            tag.textColor = kWhiteColor;
+            tag.textColor = [UIColor whiteColor];
             tag.bgColor = YJNaviColor;
         }else{
             tag.textColor = HEXRGBCOLOR(0x333333);

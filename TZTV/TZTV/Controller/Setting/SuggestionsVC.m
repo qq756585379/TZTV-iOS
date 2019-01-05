@@ -15,6 +15,14 @@
 
 @implementation SuggestionsVC
 
++ (void)load
+{
+    YJMappingVO *vo = [YJMappingVO new];
+    vo.className = NSStringFromClass(self);
+    vo.createdType = YJMappingClassCreateByStoryboard;
+    [[YJRouter sharedInstance] registerRouterVO:vo withKey:@"SuggestionsVC"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.contentTextView.delegate=self;

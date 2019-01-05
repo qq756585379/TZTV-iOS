@@ -21,7 +21,8 @@
 
 @implementation MeCell1
 
-+(CGFloat)heightForCellData:(id)aData{
++(CGFloat)heightForCellData:(id)aData
+{
     return 92;
 }
 

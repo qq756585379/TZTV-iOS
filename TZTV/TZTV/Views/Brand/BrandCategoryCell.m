@@ -43,7 +43,7 @@
     [super setSelected:selected animated:animated];
     self.textLabel.textColor = selected ? YJNaviColor : [UIColor darkGrayColor];
     self.selectedIndicator.hidden = !selected;
-    self.contentView.backgroundColor=selected?kF5F5F5:kWhiteColor;
+    self.contentView.backgroundColor=selected?kF5F5F5:[UIColor whiteColor];
 }
 
 @end

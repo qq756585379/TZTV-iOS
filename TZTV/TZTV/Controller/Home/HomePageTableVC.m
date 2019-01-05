@@ -12,7 +12,6 @@
 #import "HomaePageCell3.h"
 #import "HomePageHeader.h"
 #import "HomePageTool.h"
-#import "ShowPictureVC.h"
 #import "YJWebViewController.h"
 #import "KRVideoPlayerController.h"
 
@@ -33,11 +32,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarHidden = NO;
     self.tableView.separatorStyle=0;
     [self.tableView registerNib:[HomePageCell nib] forCellReuseIdentifier:[HomePageCell cellReuseIdentifier]];
     [self.tableView registerNib:[HomePageCell2 nib] forCellReuseIdentifier:[HomePageCell2 cellReuseIdentifier]];
     [self.tableView registerNib:[HomaePageCell3 nib] forCellReuseIdentifier:[HomaePageCell3 cellReuseIdentifier]];
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(initData)];
+    self.tableView.height = SCREEN_HEIGHT - 38;
     [self initData];
 }
 
@@ -58,14 +59,16 @@
     }];
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     HomePageCell *currentCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     currentCell.bannerView.autoRunPage=YES;
     self.navigationController.navigationBarHidden=YES;
 }
 
--(void)viewWillDisappear:(BOOL)animated{
+-(void)viewWillDisappear:(BOOL)animated
+{
     [super viewDidDisappear:animated];
     HomePageCell *currentCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     currentCell.bannerView.autoRunPage=NO;
@@ -88,11 +91,11 @@
     }else if(indexPath.section==1) {
         UITableViewCell *cell=[[UITableViewCell alloc] init];
         cell.selectionStyle=0;
-        UIImageView *imgIV=[[UIImageView alloc] init];//WithFrame:CGRectMake(20, 10, ScreenW-40, 82)
-        imgIV.contentMode=UIViewContentModeCenter;
+        UIImageView *imgIV = [[UIImageView alloc] init];
+        imgIV.contentMode = UIViewContentModeScaleAspectFill;
         imgIV.image=[UIImage imageNamed:@"shoping_vouchers"];
         [cell.contentView addSubview:imgIV];
-        [imgIV autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(10, 20, 0, 20) excludingEdge:ALEdgeBottom];
+        [imgIV autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(10, 10, 0, 10) excludingEdge:ALEdgeBottom];
         [imgIV autoSetDimension:ALDimensionHeight toSize:82];
         [cell.contentView updateConstraintsIfNeeded];//强制更新约束
         [cell.contentView layoutIfNeeded];//强制刷新界面
@@ -116,7 +119,9 @@
         return cell;
     }
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (indexPath.section==0) {
         return [HomePageCell heightForCellData:nil];
     }else if (indexPath.section==1){
@@ -127,13 +132,18 @@
         return [HomaePageCell3 heightForCellData:nil];
     }
 }
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
     return (section==0 || section==1)?0.01:[HomePageHeader heightForCellData:nil];
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 10;
 }
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
     if (section==2){
         HomePageHeader *header=[HomePageHeader tableHeaderWithTableView:tableView];
         [header setIcon:@"tuijian" andTitle:@"今日推荐"];
@@ -143,10 +153,12 @@
         [header setIcon:@"Featured" andTitle:@"精选内容"];
         return header;
     }
+    
     return [UIView new];
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (indexPath.section==1) {
         if ([AccountTool getAccount:YES]==nil) return;
         YJWebViewController *web=[YJWebViewController new];
@@ -155,10 +167,10 @@
         web.title=@"优惠券";
         [self.navigationController pushViewController:web animated:YES];
     }
-    if (indexPath.section==3) {
-        ShowPictureVC *vc=[ShowPictureVC new];
-        vc.imageName=[[self images] safeObjectAtIndex:indexPath.row];
-        [self.navigationController pushViewController:vc animated:YES];
+    
+    if (indexPath.section==3){
+        NSString *imageName = [[self images] safeObjectAtIndex:indexPath.row];
+        [YJRouter routeToDestVc:@"ShowPictureVC" from:self extraData:@{@"imageName":imageName}];
     }
 }
 

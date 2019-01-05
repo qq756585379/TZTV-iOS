@@ -6,6 +6,6 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface SettingVC : YJBaseTableVC
+@interface SettingVC : UITableViewController
 
 @end

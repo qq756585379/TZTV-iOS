@@ -8,7 +8,6 @@
 
 #import "AddressVC.h"
 #import "PlaceHoldView.h"
-#import "UIBarButtonItem+Create.h"
 #import "AddressCell.h"
 #import "EditAddressVC.h"
 #import "NSArray+safe.h"
@@ -20,6 +19,13 @@
 @end
 
 @implementation AddressVC
+
++ (void)load
+{
+    YJMappingVO *vo = [YJMappingVO new];
+    vo.className = NSStringFromClass(self);
+    [[YJRouter sharedInstance] registerRouterVO:vo withKey:@"AddressVC"];
+}
 
 - (void)viewDidLoad {  
     [super viewDidLoad];

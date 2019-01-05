@@ -32,7 +32,8 @@ HMSingletonM(Manager)
     return self;
 }
 
--(CLLocationManager *)locationManager{
+-(CLLocationManager *)locationManager
+{
     if (!_locationManager) {
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
@@ -49,6 +50,7 @@ HMSingletonM(Manager)
         [self locationWithIp];
     }
 }
+
 - (void)startWithCompleteBlock:(CLManagerCompleteBlock)block{
     self.block = block;
     [self startSearchLocation];

@@ -15,7 +15,6 @@
 #import "HomeViewModel2.h"
 #import "HomeButtomCell.h"
 #import "YJWebViewController.h"
-#import "UIBarButtonItem+Create.h"
 #import "FenLeiSearchVC.h"
 #import "YJNav.h"
 
@@ -36,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarHidden = NO;
     self.tableView.backgroundColor=kF5F5F5;
     [self.tableView registerNib:[HomePageCellTableViewCell nib]
          forCellReuseIdentifier:[HomePageCellTableViewCell cellReuseIdentifier]];
@@ -45,8 +45,9 @@
     self.tableView.mj_footer = [MJRefreshBackFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tuzi_word"]];
-    self.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithImage:@"search"
-                                                                highImage:@"search"
+    UIImage *image = [UIImage imageNamed:@"search"];
+    self.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithImage:image
+                                                                highImage:image
                                                                    target:self
                                                                    action:@selector(rightClicked)];
     [self loadNewData];
@@ -86,25 +87,28 @@
     }];
 }
 
-#pragma mark -
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.viewModel.topArray.count+self.viewModel.buttomArray.count+1;
+//    return self.viewModel.topArray.count+self.viewModel.buttomArray.count+1;
+    return 10;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0) {
         HomeBannerCell *cell=[tableView dequeueReusableCellWithIdentifier:[HomeBannerCell cellReuseIdentifier] forIndexPath:indexPath];
         return cell;
-    }else if (indexPath.section>self.viewModel.topArray.count){
+//    }else if (indexPath.section>self.viewModel.topArray.count){
+    } else if (indexPath.section<3) {
         HomeButtomCell *cell=[tableView dequeueReusableCellWithIdentifier:[HomeButtomCell cellReuseIdentifier] forIndexPath:indexPath];
-        cell.buttomModel=[self.viewModel.buttomArray safeObjectAtIndex:indexPath.section-self.viewModel.topArray.count-1];
+//        cell.buttomModel=[self.viewModel.buttomArray safeObjectAtIndex:indexPath.section-self.viewModel.topArray.count-1];
         return cell;
     }else{
         HomePageCellTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:[HomePageCellTableViewCell cellReuseIdentifier]];
-        cell.homeModel2=[self.viewModel.topArray safeObjectAtIndex:indexPath.section-1];
-        YJLog(@">>>>>>>>>>>>%@",cell.homeModel2.user_image);
+//        cell.homeModel2=[self.viewModel.topArray safeObjectAtIndex:indexPath.section-1];
+
         WEAK_SELF
         cell.block=^(HomeModel2 *homeModel){
             NSURL *playerUrl = [NSURL URLWithString:homeModel.live_rtmp_play_url];
@@ -115,7 +119,8 @@
     }
 }
 
-- (void)playVideoWithURL:(NSURL *)url{
+- (void)playVideoWithURL:(NSURL *)url
+{
     if (!self.videoController) {
         CGFloat width = [UIScreen mainScreen].bounds.size.width;
         self.videoController = [[KRVideoPlayerController alloc] initWithFrame:CGRectMake(0, 0, width, width*(9.0/16.0))];

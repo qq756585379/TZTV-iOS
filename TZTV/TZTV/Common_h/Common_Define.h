@@ -28,7 +28,6 @@
 #define kDCDCDC                 HEXRGBCOLOR(0xdcdcdc)
 #define kFAFAFA                 HEXRGBCOLOR(0xfafafa)
 
-#define kWhiteColor             [UIColor whiteColor]
 #define kClearColor             [UIColor clearColor]
 #define kRedColor               [UIColor redColor]
 #define kGreenColor             [UIColor greenColor]

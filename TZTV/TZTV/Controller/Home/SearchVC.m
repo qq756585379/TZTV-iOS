@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [(YJNav *)self.navigationController updateNavBarBg:[UIImage imageWithColor:kWhiteColor] andShadowImage:[UIImage imageWithColor:kEDEDED]];
+    [(YJNav *)self.navigationController updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
     _navBar=[[CustomNavSearchView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 44)];
     _navBar.delegate=self;
     [self.navigationController.navigationBar addSubview:_navBar];

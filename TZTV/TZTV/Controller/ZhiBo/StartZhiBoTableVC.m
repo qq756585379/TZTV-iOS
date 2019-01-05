@@ -21,6 +21,14 @@
 
 @implementation StartZhiBoTableVC
 
++ (void)load
+{
+    YJMappingVO *vo = [YJMappingVO new];
+    vo.className = NSStringFromClass(self);
+    vo.createdType = YJMappingClassCreateByStoryboard;
+    [[YJRouter sharedInstance] registerRouterVO:vo withKey:@"StartZhiBoTableVC"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"开启直播";

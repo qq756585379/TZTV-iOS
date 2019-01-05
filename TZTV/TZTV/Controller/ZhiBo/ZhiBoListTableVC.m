@@ -21,27 +21,11 @@
 
 @implementation ZhiBoListTableVC
 
--(LiveListViewModel *)liveVM{
-    if (!_liveVM) {
-        _liveVM=[LiveListViewModel new];
-    }
-    return _liveVM;
-}
--(PlaceHoldView *)placeHoder{
-    if (!_placeHoder) {
-        _placeHoder=[PlaceHoldView autolayoutView];
-        WEAK_SELF
-        _placeHoder.PlaceHoldBlock=^(NSString *buttonTitle){
-            [weakSelf loadNewData];
-        };
-    }
-    return _placeHoder;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"直播列表";
-    self.tableView.backgroundColor=kF5F5F5;
+    self.title = @"直播列表";
+    self.tabBarHidden = NO;
+    self.tableView.backgroundColor = kF5F5F5;
     [self.tableView registerNib:[HomePageCellTableViewCell nib] forCellReuseIdentifier:[HomePageCellTableViewCell cellReuseIdentifier]];
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
@@ -110,9 +94,9 @@
     }
 }
 
-#pragma mark -
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.liveVM.modelArray.count;
+//    return self.liveVM.modelArray.count;
+    return 10;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -152,5 +136,24 @@
     self.videoController.contentURL = url;
 }
 
+-(LiveListViewModel *)liveVM
+{
+    if (!_liveVM) {
+        _liveVM=[LiveListViewModel new];
+    }
+    return _liveVM;
+}
+
+-(PlaceHoldView *)placeHoder
+{
+    if (!_placeHoder) {
+        _placeHoder=[PlaceHoldView autolayoutView];
+        WEAK_SELF
+        _placeHoder.PlaceHoldBlock=^(NSString *buttonTitle){
+            [weakSelf loadNewData];
+        };
+    }
+    return _placeHoder;
+}
 
 @end

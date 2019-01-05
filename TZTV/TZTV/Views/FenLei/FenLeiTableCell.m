@@ -54,7 +54,7 @@
     [collectView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
     [collectView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.imageV];
     
-    collectView.backgroundColor=kWhiteColor;
+    collectView.backgroundColor=[UIColor whiteColor];
     collectView.dataSource = self;
     collectView.delegate = self;
     collectView.pagingEnabled = YES;

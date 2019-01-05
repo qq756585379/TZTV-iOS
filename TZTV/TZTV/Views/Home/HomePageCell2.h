@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *desLabel;
 
 @property (nonatomic, strong) LiveListModel *listModel;
-
 @property (nonatomic,   copy) void(^block)(LiveListModel *listModel);
 
 @end

@@ -29,6 +29,14 @@
 
 @implementation HomePageCellTableViewCell
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.scrollCollectionView.showsVerticalScrollIndicator=NO;
+    self.scrollCollectionView.showsHorizontalScrollIndicator=NO;
+    [self.scrollCollectionView registerNib:[HomeScrollItem nib] forCellWithReuseIdentifier:[HomeScrollItem cellReuseIdentifier]];
+}
+
 +(CGFloat)heightForCellData:(id)aData
 {
     HomeModel2 *model=(HomeModel2 *)aData;
@@ -47,7 +55,7 @@
             YJLog(@"getHistoryURL===%@",json);
             if ([json[@"code"] isEqualToNumber:@0]) {
                 PLPlayerVC *vc=[sb instantiateViewControllerWithIdentifier:@"PLPlayerVC"];
-                vc.live_id=_homeModel2.live_id;
+                vc.live_id=self.homeModel2.live_id;
                 vc.live_user_id=_homeModel2.user_id;
                 vc.live_rtmp_play_url=json[@"data"];
                 [[YJTOOL getRootControllerSelectedVc] pushViewController:vc animated:YES];
@@ -91,20 +99,16 @@
     [self.scrollCollectionView reloadData];
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    self.scrollCollectionView.showsVerticalScrollIndicator=NO;
-    self.scrollCollectionView.showsHorizontalScrollIndicator=NO;
-    [self.scrollCollectionView registerNib:[HomeScrollItem nib] forCellWithReuseIdentifier:[HomeScrollItem cellReuseIdentifier]];
-}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.homeModel2.goodsList.count;
 }
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HomeScrollItem *item=(HomeScrollItem *)[collectionView dequeueReusableCellWithReuseIdentifier:[HomeScrollItem cellReuseIdentifier] forIndexPath:indexPath];
-    item.goodModel=[self.homeModel2.goodsList safeObjectAtIndex:indexPath.row];
+//    item.goodModel=[self.homeModel2.goodsList safeObjectAtIndex:indexPath.row];
     return item;
 }
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     BrandDetailVC1 *vc=[BrandDetailVC1 new];
     BrandDetailModel *detail=[self.homeModel2.goodsList safeObjectAtIndex:indexPath.row];

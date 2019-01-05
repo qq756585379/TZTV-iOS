@@ -35,7 +35,7 @@
     if (!_chatLabel) {
         _chatLabel=[UILabel autolayoutView];
         _chatLabel.font=YJFont(14);
-        _chatLabel.textColor=kWhiteColor;
+        _chatLabel.textColor=[UIColor whiteColor];
         _chatLabel.numberOfLines=0;
     }
     return _chatLabel;

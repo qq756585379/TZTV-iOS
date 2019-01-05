@@ -11,14 +11,7 @@
 #import "MeCell2.h"
 #import "MeCell3.h"
 #import "AccountTool.h"
-#import "AddressVC.h"
-#import "MyOrderFatherVC.h"
-#import "SettingVC.h"
 #import "JhtFloatingBall.h"
-#import "StartZhiBoTableVC.h"
-#import "YJWebViewController.h"
-#import "StartZhiBoTableVC.h"
-#import "CouponTableVC.h"
 
 @interface MeViewController ()<UIGestureRecognizerDelegate>
 @property (nonatomic,   weak) JhtFloatingBall *floatBoll;
@@ -93,39 +86,39 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 10;
+    return section == 2 ? 0.1 : 10;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    switch (indexPath.section*10+indexPath.row) {
-        case  0:{
-            if ([AccountTool getAccount:YES]==nil) return;
-            [self.navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"SingleInfoVC"] animated:YES];
+    switch (indexPath.section * 10 + indexPath.row) {
+        case 0:{
+            if ([AccountTool getAccount:YES] == nil) return;
+            [YJRouter routeToDestVc:@"SingleInfoVC" from:self extraData:nil];
         }
             break;
         case 20:
             [self makeCall];
             break;
         case 21:{//收货地址
-            if ([AccountTool getAccount:YES]==nil) return;
-            [self.navigationController pushViewController:[AddressVC new] animated:YES];
+            if ([AccountTool getAccount:YES] == nil) return;
+            [YJRouter routeToDestVc:@"AddressVC" from:self extraData:nil];
         }
             break;
         case 22://关于兔子h5页面
         {
-            YJWebViewController *web=[YJWebViewController new];
-            web.htmlUrl=aboutTZ_URL;
-            web.title=@"关于兔子";
-            [self.navigationController pushViewController:web animated:YES];
+//            YJWebViewController *web=[YJWebViewController new];
+//            web.htmlUrl=aboutTZ_URL;
+//            web.title=@"关于兔子";
+//            [self.navigationController pushViewController:web animated:YES];
         }
             break;
         case 23://设置
-            [self.navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"SettingVC"] animated:YES];
+            [YJRouter routeToDestVc:@"SettingVC" from:self extraData:nil];
             break;
         case 24:{
-            StartZhiBoTableVC *vc=[sb instantiateViewControllerWithIdentifier:@"StartZhiBoTableVC"];
-            [self.navigationController pushViewController:vc animated:YES];
+            [YJRouter routeToDestVc:@"StartZhiBoTableVC" from:self extraData:nil];
         }
             break;
         default:
@@ -133,7 +126,8 @@
     }
 }
 
--(void)makeCall{
+-(void)makeCall
+{
 #if !TARGET_IPHONE_SIMULATOR
     UIWebView *callWebview = [[UIWebView alloc] init];
     NSURL *telURL =[NSURL URLWithString:@"tel:021-68411796"];// 貌似tel:// 或者 tel: 都行
@@ -143,7 +137,8 @@
 }
 
 #pragma mark - 添加addFolatingball
-- (void)addFolatingball {
+- (void)addFolatingball
+{
     JhtFloatingBall *fb = [[JhtFloatingBall alloc] init];
     UIImage *suspendedBallImage = [UIImage imageNamed:@"logo_136_139"];
     fb.frame = CGRectMake(ScreenW-suspendedBallImage.size.width, ScreenH/2, suspendedBallImage.size.width, suspendedBallImage.size.height);
@@ -158,10 +153,10 @@
 }
 
 /** fb点击 事件 */
-- (void)fbTap:(UITapGestureRecognizer *)ges {
+- (void)fbTap:(UITapGestureRecognizer *)ges
+{
     self.floatBoll.hidden=YES;
-    StartZhiBoTableVC *vc=[sb instantiateViewControllerWithIdentifier:@"StartZhiBoTableVC"];
-    [self.navigationController pushViewController:vc animated:YES];
+    [YJRouter routeToDestVc:@"StartZhiBoTableVC" from:self extraData:nil];
 }
 
 @end

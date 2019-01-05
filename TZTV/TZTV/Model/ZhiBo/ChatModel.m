@@ -32,7 +32,7 @@
         [attributeString_atts addAttributes:@{NSForegroundColorAttributeName:HEXRGBCOLOR(0xE15555),
                                               NSFontAttributeName:YJFont(14)
                                               } range:range];
-        [attributeString_atts addAttributes:@{NSForegroundColorAttributeName:kWhiteColor,
+        [attributeString_atts addAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                               NSFontAttributeName:YJFont(14)
                                               } range:[allStr rangeOfString:_msg_content]];
         _chatString=attributeString_atts;

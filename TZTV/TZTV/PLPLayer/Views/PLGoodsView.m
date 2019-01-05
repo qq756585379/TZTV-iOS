@@ -60,7 +60,7 @@
 - (void)setupTitlesView{
     UIView *titlesView = [[UIView alloc] init];
     titlesView.frame = CGRectMake(0, 0,ScreenW, 40);
-    titlesView.backgroundColor=kWhiteColor;
+    titlesView.backgroundColor=[UIColor whiteColor];
     [self addSubview:titlesView];
     self.topView = titlesView;
     

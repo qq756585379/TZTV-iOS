@@ -56,6 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"购物车";
+    self.tabBarHidden = NO;
     self.tableView.separatorStyle=0;
     self.view.backgroundColor=kF5F5F5;
     self.tableView.backgroundColor=kF5F5F5;

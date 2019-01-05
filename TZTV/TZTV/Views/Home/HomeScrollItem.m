@@ -18,7 +18,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.contentView.backgroundColor=kWhiteColor;
+    self.contentView.backgroundColor=[UIColor whiteColor];
 }
 
 -(void)setGoodModel:(BrandDetailModel *)goodModel{

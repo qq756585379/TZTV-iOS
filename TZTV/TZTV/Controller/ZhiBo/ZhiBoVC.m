@@ -33,6 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self _prepareForCameraSetting];
     [self checkAndRequestPermission];
     [self.chatTV registerClass:[ChatCell class] forCellReuseIdentifier:[ChatCell cellReuseIdentifier]];
@@ -57,7 +58,8 @@
     [self createTimer];
 }
 
--(void)createTimer{
+-(void)createTimer
+{
     self.timer=[NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(getChatAndNum) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }

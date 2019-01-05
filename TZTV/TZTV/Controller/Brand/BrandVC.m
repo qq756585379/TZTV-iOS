@@ -62,6 +62,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"品牌";
+    self.tabBarHidden = NO;
     [self initUI];
     [self loadNewData];
 }
@@ -151,7 +152,8 @@
     }
 }
 
--(void)initUI{
+-(void)initUI
+{
     self.tableView = [[YJTableView alloc] initWithFrame:CGRectZero];
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;//设置这个就会让autoresizingMask失效
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -223,7 +225,6 @@
     }
 }
 
-
 #pragma mark - collectionView Delegate/DataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     [collectionView.collectionViewLayout invalidateLayout];
@@ -262,6 +263,7 @@
     }
     return item;
 }
+
 //section的view的定制
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     NSIndexPath *index=[self.tableView indexPathForSelectedRow];
@@ -282,13 +284,16 @@
     CGFloat width=(collectionView.bounds.size.width-40)/3;
     return CGSizeMake(width,width*212/168);
 }
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     CGFloat width = collectionView.bounds.size.width;
     return CGSizeMake(width-20, 30);
 }
+
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
+
 #pragma mark - Action
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSIndexPath *table_indexPath=[self.tableView indexPathForSelectedRow];

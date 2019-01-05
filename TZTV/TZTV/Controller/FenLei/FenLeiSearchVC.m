@@ -14,7 +14,6 @@
 #import "BrandDetailVC1.h"
 #import "BrandDetailModel.h"
 #import "HomepageTitleView.h"
-#import "UIBarButtonItem+Create.h"
 
 @interface FenLeiSearchVC ()<UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) SKTagView *tagView;
@@ -31,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=kWhiteColor;
+    self.view.backgroundColor=[UIColor whiteColor];
     [self setUpUISearchBar];
     [self configTagView];
     [self setUpResultView];
@@ -144,7 +143,7 @@
         tag.cornerRadius = 3.0f;
         tag.font = [UIFont boldSystemFontOfSize:12];
         tag.borderWidth = 1;
-        tag.bgColor = kWhiteColor;
+        tag.bgColor = [UIColor whiteColor];
         tag.borderColor = [UIColor lightGrayColor];
         tag.textColor = [UIColor lightGrayColor];
         tag.enable = YES;

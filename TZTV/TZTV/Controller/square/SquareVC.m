@@ -10,7 +10,6 @@
 #import "SqureHeadView.h"
 #import "SqureCell.h"
 #import "SqureCell2.h"
-#import "UIBarButtonItem+Create.h"
 
 @interface SquareVC ()
 @property (nonatomic, strong) SqureHeadView *headView;

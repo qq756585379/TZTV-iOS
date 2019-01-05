@@ -13,7 +13,7 @@
 
 +(CGFloat)heightForCellData:(id)aData
 {
-    return ScreenW * 420 / 750;
+    return SCREEN_WIDTH * 420 / 750;
 }
 
 #pragma mark - 播放
@@ -45,8 +45,8 @@
 -(void)setListModel:(LiveListModel *)listModel
 {
     _listModel=listModel;
-    [self.bgIV sd_setImageWithURL:[NSURL URLWithString:listModel.live_snapshot_play_url] placeholderImage:[UIImage imageNamed:@"Loading_pictures"]];
-    self.desLabel.text=listModel.live_title;
+//    [self.bgIV sd_setImageWithURL:[NSURL URLWithString:listModel.live_snapshot_play_url] placeholderImage:[UIImage imageNamed:@"Loading_pictures"]];
+//    self.desLabel.text=listModel.live_title;
 }
 
 @end

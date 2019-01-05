@@ -20,7 +20,7 @@
 
 -(void)initUI
 {
-    self.backgroundColor=kWhiteColor;
+    self.backgroundColor=[UIColor whiteColor];
     
     [self addSubview:self.cornerView];
     [self addSubview:self.cancelBtn];

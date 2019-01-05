@@ -46,11 +46,9 @@
 }
 
 - (UIView *)pageView:(OTSCyclePageView *)aPageView pageAtIndex:(NSUInteger)aIndex{
-//    OTSPlaceholderImageView *imageView = [[OTSPlaceholderImageView alloc] initWithFrame:aPageView.bounds];
-//    imageView.image=[UIImage imageNamed:[NSString stringWithFormat:@"%d",(int)aIndex]];
-//    return imageView;
-    
-    return nil;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:aPageView.bounds];
+    imageView.image=[UIImage imageNamed:[NSString stringWithFormat:@"%d",(int)aIndex]];
+    return imageView;
 }
 
 #pragma mark - OTSCyclePageViewDelegate

@@ -21,7 +21,7 @@
 {
     if (self=[super initWithReuseIdentifier:reuseIdentifier]) {
         
-        self.contentView.backgroundColor=kWhiteColor;
+        self.contentView.backgroundColor=[UIColor whiteColor];
         
         [self.contentView addSubview:self.choosebtn];
         
