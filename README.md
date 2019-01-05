@@ -15,7 +15,8 @@
 ## [Vue.js写的网页版,github地址](https://github.com/qq756585379/tzshop)
 微信扫描下面二维码查看效果
 <div align="center">
-<img src="./image/3.jpg" height="200" width="200" >
+<img src="./image/6.png" height="200" width="200" >
+<img src="./image/6.png" height="200" width="200" >
 </div>
 
 
