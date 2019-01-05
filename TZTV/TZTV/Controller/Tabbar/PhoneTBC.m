@@ -41,7 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self config0_2];
+    [self config0_1];
 }
 
 -(void)config0_1
