@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的移动购物中心" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFI-wK-gkU">
+                                <rect key="frame" x="134.5" y="631" width="106.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuzi_word" translatesAutoresizingMaskIntoConstraints="NO" id="OIA-WD-2if">
+                                <rect key="frame" x="148" y="606" width="78" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="qOd-yX-I8F"/>
+                                    <constraint firstAttribute="height" constant="20" id="whb-Lm-E60"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_136_139" translatesAutoresizingMaskIntoConstraints="NO" id="htf-Ij-bNt">
+                                <rect key="frame" x="154" y="528" width="68" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="2Iv-ur-TUa"/>
+                                    <constraint firstAttribute="height" constant="68" id="q1g-Lc-w1h"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="htf-Ij-bNt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DZ5-S2-FVv"/>
+                            <constraint firstAttribute="bottom" secondItem="wFI-wK-gkU" secondAttribute="bottom" constant="20" id="Ere-xx-KhE"/>
+                            <constraint firstItem="wFI-wK-gkU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fxe-vd-aGR"/>
+                            <constraint firstItem="OIA-WD-2if" firstAttribute="top" secondItem="htf-Ij-bNt" secondAttribute="bottom" constant="10" id="bV9-qz-dy5"/>
+                            <constraint firstItem="OIA-WD-2if" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hi5-kk-BNR"/>
+                            <constraint firstItem="wFI-wK-gkU" firstAttribute="top" secondItem="OIA-WD-2if" secondAttribute="bottom" constant="5" id="ssg-Hg-7kT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79" y="144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo_136_139" width="68" height="69"/>
+        <image name="tuzi_word" width="78" height="20"/>
+    </resources>
+</document>

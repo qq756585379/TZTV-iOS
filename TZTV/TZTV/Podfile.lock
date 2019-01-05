@@ -1,0 +1,78 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - HappyDNS (0.3.10)
+  - Masonry (1.0.2)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
+  - pili-librtmp (1.0.3.1)
+  - PLMediaStreamingKit (2.0.0):
+    - HappyDNS (~> 0.3.0)
+    - pili-librtmp (= 1.0.3.1)
+    - PLMediaStreamingKit/PLCameraStreamingKit (= 2.0.0)
+    - PLMediaStreamingKit/PLStreamingKit (= 2.0.0)
+  - PLMediaStreamingKit/PLCameraStreamingKit (2.0.0):
+    - HappyDNS (~> 0.3.0)
+    - pili-librtmp (= 1.0.3.1)
+  - PLMediaStreamingKit/PLStreamingKit (2.0.0):
+    - HappyDNS (~> 0.3.0)
+    - pili-librtmp (= 1.0.3.1)
+  - PLPlayerKit (2.2.2):
+    - HappyDNS
+    - pili-librtmp (= 1.0.3.1)
+    - PLPlayerKit/precompiled (= 2.2.2)
+  - PLPlayerKit/precompiled (2.2.2):
+    - HappyDNS
+    - pili-librtmp (= 1.0.3.1)
+  - PureLayout (3.0.2)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - Masonry (~> 1.0.2)
+  - MJExtension (~> 3.0.13)
+  - MJRefresh (~> 3.1.12)
+  - PLMediaStreamingKit (~> 2.0.0)
+  - PLPlayerKit (~> 2.2.2)
+  - PureLayout (~> 3.0.2)
+  - ReactiveCocoa (~> 2.5)
+  - SDWebImage (~> 3.8.2)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  HappyDNS: 06a9fed2796663fd87626dbf02552933265bf059
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  pili-librtmp: 0adf2516f4b5958b3cb079a4c3d4f6a4a9f49ce9
+  PLMediaStreamingKit: f4b42bf5baeac328f1991a6024841fa789ebbb4e
+  PLPlayerKit: b5182ef942dce71678c9db07c2e1959df91e81cc
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+
+PODFILE CHECKSUM: daf71aeb4c2dd3339575cf3b2b925ba85bac480f
+
+COCOAPODS: 1.1.1

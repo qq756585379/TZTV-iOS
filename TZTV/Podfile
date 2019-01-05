@@ -1,0 +1,43 @@
+platform :ios, '9.0'
+
+# 对于我们使用cocoapod引入的第三方,我们可以在podfile文件中 增加一句  inhibit_all_warnings! 来要pod的工程不显示任何警告
+inhibit_all_warnings!
+
+target 'TZTV' do
+    
+    # Pods for YJMall
+    pod 'YJHomeKit', :path=> '../../YJHomeKit/'
+    
+    # 自动布局
+    pod 'Masonry'
+    pod 'PureLayout'
+    
+    # 提示组件框架
+    pod 'SVProgressHUD'
+    pod 'MBProgressHUD'
+    
+    # 响应函数式框架
+    pod 'ReactiveObjC'
+    
+    pod 'AFNetworking'
+    pod 'MJExtension'
+    pod 'MJRefresh'
+    pod 'SDWebImage'
+    pod 'BlocksKit'
+
+    pod 'FMDB'
+    
+#    pod 'PLMediaStreamingKit'
+#    pod 'PLPlayerKit'
+
+    pod 'ActionSheetPicker-3.0'
+    pod 'SKTagView'
+    pod 'UITableView+FDTemplateLayoutCell'
+    pod 'PYSearch'
+    pod 'KRVideoPlayer'
+    pod 'BarrageRenderer'
+    
+#    pod 'HappyDNS'
+#    pod 'PLMediaStreamingKit'
+
+end

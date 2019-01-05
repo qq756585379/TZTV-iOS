@@ -1,0 +1,126 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.3.0)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
+  - BarrageRenderer (2.1.0)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - KRVideoPlayer (1.0.1)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.1.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
+  - PureLayout (3.0.2)
+  - PYSearch (0.9.0)
+  - ReactiveObjC (3.1.0)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
+  - SKTagView (0.9.2)
+  - SVProgressHUD (2.2.5)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
+  - YJHomeKit (0.0.3):
+    - Aspects
+    - Masonry
+    - PureLayout
+    - ReactiveObjC
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0
+  - AFNetworking
+  - BarrageRenderer
+  - BlocksKit
+  - FMDB
+  - KRVideoPlayer
+  - Masonry
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
+  - PureLayout
+  - PYSearch
+  - ReactiveObjC
+  - SDWebImage
+  - SKTagView
+  - SVProgressHUD
+  - "UITableView+FDTemplateLayoutCell"
+  - YJHomeKit (from `../../YJHomeKit/`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ActionSheetPicker-3.0
+    - AFNetworking
+    - Aspects
+    - BarrageRenderer
+    - BlocksKit
+    - FMDB
+    - KRVideoPlayer
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - PureLayout
+    - PYSearch
+    - ReactiveObjC
+    - SDWebImage
+    - SKTagView
+    - SVProgressHUD
+    - "UITableView+FDTemplateLayoutCell"
+
+EXTERNAL SOURCES:
+  YJHomeKit:
+    :path: "../../YJHomeKit/"
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  BarrageRenderer: 00e5f8081d81f29c1fc12712ddf2f875bd9c6f77
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  KRVideoPlayer: 08918da1b99cae35fd4c15b2ec2b49358d4c985f
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  PYSearch: 55175e6046e2e1b5236a90c780351988e914a015
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SKTagView: 59cdadcd16e4a09300746ad1811a72371e1327f7
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  YJHomeKit: 86c69e4795067ce00167d327e042948028c553bb
+
+PODFILE CHECKSUM: 8b0877befc42d6980464e8a24c950e0515b11e33
+
+COCOAPODS: 1.5.3

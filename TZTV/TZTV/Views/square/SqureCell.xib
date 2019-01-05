@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="SqureCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-CH-RfK">
+                        <rect key="frame" x="0.0" y="0.0" width="64" height="79.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="女装" image="woman">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" image="woman_click">
+                            <color key="titleColor" red="0.99607843139999996" green="0.87058823529999996" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="btnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yNq-Tx-guH"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-y4-AFW">
+                        <rect key="frame" x="64" y="0.0" width="64" height="79.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="男装品牌" image="men">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" image="man_click">
+                            <color key="titleColor" red="0.99607843139999996" green="0.87058823529999996" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="btnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Lm4-5o-WaA"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ia-tB-5Xo">
+                        <rect key="frame" x="128" y="0.0" width="64" height="79.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="珠宝首饰" image="jewelry">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" image="jewelry_click">
+                            <color key="titleColor" red="0.99607843139999996" green="0.87058823529999996" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="btnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="C8U-sM-der"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39P-Mh-Tz0">
+                        <rect key="frame" x="256" y="0.0" width="64" height="79.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="运动" image="sports">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" image="sports_click">
+                            <color key="titleColor" red="0.99607843139999996" green="0.87058823529999996" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="btnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oFC-WD-2MD"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrH-s0-nXb">
+                        <rect key="frame" x="192" y="0.0" width="64" height="79.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="母婴用品" image="baby">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" image="baby_click">
+                            <color key="titleColor" red="0.99607843139999996" green="0.87058823529999996" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="btnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kmR-wA-eEt"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0ia-tB-5Xo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1hE-h0-Dy4"/>
+                    <constraint firstItem="Ojc-y4-AFW" firstAttribute="leading" secondItem="X7y-CH-RfK" secondAttribute="trailing" id="22Q-Yi-TzZ"/>
+                    <constraint firstItem="0ia-tB-5Xo" firstAttribute="leading" secondItem="Ojc-y4-AFW" secondAttribute="trailing" id="2oN-JE-gEp"/>
+                    <constraint firstItem="ZrH-s0-nXb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="B3b-di-QeJ"/>
+                    <constraint firstAttribute="trailing" secondItem="39P-Mh-Tz0" secondAttribute="trailing" id="GG6-C7-BYQ"/>
+                    <constraint firstItem="39P-Mh-Tz0" firstAttribute="width" secondItem="X7y-CH-RfK" secondAttribute="width" id="HUh-Xc-LeG"/>
+                    <constraint firstAttribute="bottom" secondItem="0ia-tB-5Xo" secondAttribute="bottom" id="KMH-3w-IOh"/>
+                    <constraint firstAttribute="bottom" secondItem="Ojc-y4-AFW" secondAttribute="bottom" id="Kr6-GH-uHe"/>
+                    <constraint firstAttribute="bottom" secondItem="ZrH-s0-nXb" secondAttribute="bottom" id="LUd-ri-toS"/>
+                    <constraint firstItem="Ojc-y4-AFW" firstAttribute="width" secondItem="X7y-CH-RfK" secondAttribute="width" id="O3I-Ys-0Wn"/>
+                    <constraint firstItem="X7y-CH-RfK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VXT-C7-kv3"/>
+                    <constraint firstItem="Ojc-y4-AFW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Y1b-dt-2Ks"/>
+                    <constraint firstItem="ZrH-s0-nXb" firstAttribute="leading" secondItem="0ia-tB-5Xo" secondAttribute="trailing" id="aCd-8y-EA1"/>
+                    <constraint firstItem="0ia-tB-5Xo" firstAttribute="width" secondItem="X7y-CH-RfK" secondAttribute="width" id="dKo-Z0-s8D"/>
+                    <constraint firstItem="ZrH-s0-nXb" firstAttribute="width" secondItem="X7y-CH-RfK" secondAttribute="width" id="lH6-2K-UFO"/>
+                    <constraint firstAttribute="bottom" secondItem="X7y-CH-RfK" secondAttribute="bottom" id="nQe-kD-5Pd"/>
+                    <constraint firstAttribute="bottom" secondItem="39P-Mh-Tz0" secondAttribute="bottom" id="sSq-Wz-v4i"/>
+                    <constraint firstItem="X7y-CH-RfK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vvq-tu-GCs"/>
+                    <constraint firstItem="39P-Mh-Tz0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wLP-zv-Vw7"/>
+                    <constraint firstItem="39P-Mh-Tz0" firstAttribute="leading" secondItem="ZrH-s0-nXb" secondAttribute="trailing" id="wSl-n4-06Q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="btn1" destination="X7y-CH-RfK" id="vMZ-tT-vNf"/>
+                <outlet property="btn2" destination="Ojc-y4-AFW" id="4VQ-eW-Wvb"/>
+                <outlet property="btn3" destination="0ia-tB-5Xo" id="nXl-su-o9t"/>
+                <outlet property="btn4" destination="ZrH-s0-nXb" id="6nY-MB-MoV"/>
+                <outlet property="btn5" destination="39P-Mh-Tz0" id="Fdi-74-2b7"/>
+            </connections>
+            <point key="canvasLocation" x="-320" y="-38"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="baby" width="20" height="24"/>
+        <image name="baby_click" width="20" height="24"/>
+        <image name="jewelry" width="24" height="24"/>
+        <image name="jewelry_click" width="24" height="24"/>
+        <image name="man_click" width="23" height="24"/>
+        <image name="men" width="23" height="24"/>
+        <image name="sports" width="24" height="24"/>
+        <image name="sports_click" width="24" height="24"/>
+        <image name="woman" width="22" height="24"/>
+        <image name="woman_click" width="22" height="24"/>
+    </resources>
+</document>
