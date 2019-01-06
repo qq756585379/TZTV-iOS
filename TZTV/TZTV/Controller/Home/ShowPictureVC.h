@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface ShowPictureVC : YJBaseVC
+@interface ShowPictureVC : YJViewController
 
 @property (nonatomic,   copy) NSString *imageName;
 

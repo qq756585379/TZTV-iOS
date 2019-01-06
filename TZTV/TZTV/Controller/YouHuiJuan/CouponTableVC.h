@@ -6,6 +6,6 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface CouponTableVC : YJBaseTableVC
+@interface CouponTableVC : YJTableViewController
 
 @end

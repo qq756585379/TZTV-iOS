@@ -6,6 +6,6 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface TuiKuanTableVC : YJBaseTableVC
+@interface TuiKuanTableVC : YJTableViewController
 
 @end

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014年 OneStore. All rights reserved.
 //
 
-@interface PhoneTBC : YJBaseTBC
+#import "YJTabBarController.h"
+
+@interface PhoneTBC : YJTabBarController
 
 @end

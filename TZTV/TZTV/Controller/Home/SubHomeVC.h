@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, XMGTopicType) {
     XMGTopicType6 = 6
 };
 
-@interface SubHomeVC : YJBaseTableVC
+@interface SubHomeVC : YJTableViewController
 
 @property (nonatomic, assign) XMGTopicType type;
 

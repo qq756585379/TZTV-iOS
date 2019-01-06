@@ -6,6 +6,6 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface YouHuiJuanVC : YJBaseVC
+@interface YouHuiJuanVC : YJViewController
 
 @end

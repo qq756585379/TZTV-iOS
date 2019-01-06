@@ -11,7 +11,7 @@ typedef NS_ENUM(NSUInteger, YouHuiJuanType) {
     YouHuiJuanTypeXianXia     = 2
 };
 
-@interface YouHuiJuanSubVC : YJBaseTableVC
+@interface YouHuiJuanSubVC : YJTableViewController
 
 @property (nonatomic, assign) YouHuiJuanType type;
 

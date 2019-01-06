@@ -8,7 +8,7 @@
 
 @class OTSMask;
 
-@interface BrandFilterVC : YJBaseVC
+@interface BrandFilterVC : YJViewController
 
 @property (weak, nonatomic) OTSMask *mask;// 滑动代理
 

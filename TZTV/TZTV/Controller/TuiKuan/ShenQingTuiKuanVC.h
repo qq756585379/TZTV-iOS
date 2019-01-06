@@ -8,7 +8,7 @@
 
 #import "MyOrder.h"
 
-@interface ShenQingTuiKuanVC : YJBaseVC
+@interface ShenQingTuiKuanVC : YJViewController
 
 @property (nonatomic, strong) MyOrderSon *orderSon;
 

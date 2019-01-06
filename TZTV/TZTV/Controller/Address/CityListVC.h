@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface CityListVC : YJBaseTableVC
+@interface CityListVC : YJTableViewController
 
 @property (nonatomic,  copy) void(^selectCityBlock)(NSString *cityName);
 

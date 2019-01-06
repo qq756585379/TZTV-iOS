@@ -6,6 +6,6 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface ZhiBoListTableVC : YJBaseTableVC
+@interface ZhiBoListTableVC : YJTableViewController
 
 @end

@@ -8,7 +8,7 @@
 
 #import "ZhiBoViewModel.h"
 
-@interface PLPlayerVC : YJBaseVC
+@interface PLPlayerVC : YJViewController
 
 @property (nonatomic,   copy) NSString *live_id;
 @property (nonatomic,   copy) NSString *live_user_id;//直播用户ID

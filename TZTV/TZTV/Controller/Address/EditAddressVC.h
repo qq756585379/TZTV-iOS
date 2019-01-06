@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, AddressType) {
     EditAddressType = 2
 };
 
-@interface EditAddressVC : YJBaseTableVC
+@interface EditAddressVC : YJTableViewController
 
 @property (nonatomic, assign) AddressType type;
 

@@ -6,6 +6,6 @@
 //  Copyright © 2017年 Luosa. All rights reserved.
 //
 
-@interface HomeTableVC2 : YJBaseTableVC
+@interface HomeTableVC2 : YJTableViewController
 
 @end

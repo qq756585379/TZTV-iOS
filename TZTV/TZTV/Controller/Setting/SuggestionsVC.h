@@ -6,6 +6,6 @@
 //  Copyright © 2016年 sctto. All rights reserved.
 //
 
-@interface SuggestionsVC : YJBaseVC
+@interface SuggestionsVC : YJViewController
 
 @end

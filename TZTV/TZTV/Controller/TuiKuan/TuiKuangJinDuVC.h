@@ -10,7 +10,7 @@ typedef NS_ENUM(NSUInteger, TuiKuangJinDuType) {
     TypeFromShenQingTuiKuanVC = 1,
 };
 
-@interface TuiKuangJinDuVC : YJBaseTableVC
+@interface TuiKuangJinDuVC : YJTableViewController
 
 @property (nonatomic, assign) TuiKuangJinDuType type;
 

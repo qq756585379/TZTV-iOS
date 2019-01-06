@@ -6,6 +6,6 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface AddressVC : YJBaseVC
+@interface AddressVC : YJViewController
 
 @end

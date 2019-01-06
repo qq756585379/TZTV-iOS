@@ -11,7 +11,7 @@ typedef NS_ENUM(NSUInteger, GetVerifyCodeType) {
     GetVerifyCodeFail = 2
 };
 
-@interface RegistVC : YJBaseVC
+@interface RegistVC : YJViewController
 
 @property (nonatomic, assign) GetVerifyCodeType type;
 

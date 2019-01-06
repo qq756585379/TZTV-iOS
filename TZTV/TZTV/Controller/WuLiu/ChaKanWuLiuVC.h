@@ -8,7 +8,7 @@
 
 #import "MyOrder.h"
 
-@interface ChaKanWuLiuVC : YJBaseTableVC
+@interface ChaKanWuLiuVC : YJTableViewController
 
 @property (nonatomic, strong) MyOrder *order;
 

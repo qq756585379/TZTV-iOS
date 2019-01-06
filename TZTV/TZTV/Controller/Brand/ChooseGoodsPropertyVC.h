@@ -9,7 +9,7 @@
 #import "BrandDetailModel.h"
 #import "BrandSKU.h"
 
-@interface ChooseGoodsPropertyVC : YJBaseVC
+@interface ChooseGoodsPropertyVC : YJViewController
 
 @property (nonatomic, strong) BrandSKU *sku;
 

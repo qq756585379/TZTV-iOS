@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface ZhiBoVC : YJBaseVC
+@interface ZhiBoVC : YJViewController
 
 @property (nonatomic,   copy) NSDictionary *info;
 

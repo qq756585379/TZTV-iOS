@@ -8,7 +8,7 @@
 
 #import "MyOrder.h"
 
-@interface MyOrderDetailVC : YJBaseVC
+@interface MyOrderDetailVC : YJViewController
 
 @property (nonatomic, strong) MyOrder *order;
                                                                                                       

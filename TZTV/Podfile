@@ -5,7 +5,7 @@ inhibit_all_warnings!
 
 target 'TZTV' do
     
-    # Pods for YJMall
+#    pod 'YJHomeKit'
     pod 'YJHomeKit', :path=> '../../YJHomeKit/'
     
     # 自动布局
@@ -26,9 +26,6 @@ target 'TZTV' do
     pod 'BlocksKit'
 
     pod 'FMDB'
-    
-#    pod 'PLMediaStreamingKit'
-#    pod 'PLPlayerKit'
 
     pod 'ActionSheetPicker-3.0'
     pod 'SKTagView'
@@ -36,8 +33,5 @@ target 'TZTV' do
     pod 'PYSearch'
     pod 'KRVideoPlayer'
     pod 'BarrageRenderer'
-    
-#    pod 'HappyDNS'
-#    pod 'PLMediaStreamingKit'
 
 end

@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Luosa. All rights reserved.
 //
 
-@interface ConfirmOrderVC : YJBaseVC
+@interface ConfirmOrderVC : YJViewController
 
 @property (nonatomic, strong) NSArray *array;
 

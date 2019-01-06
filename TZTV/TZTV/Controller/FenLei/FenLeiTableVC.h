@@ -6,6 +6,6 @@
 //  Copyright © 2017年 Luosa. All rights reserved.
 //
 
-@interface FenLeiTableVC : YJBaseTableVC
+@interface FenLeiTableVC : YJTableViewController
 
 @end

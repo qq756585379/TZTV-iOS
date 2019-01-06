@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Luosa. All rights reserved.
 //
 
-@interface FenLeiDetailVC : YJBaseVC
+@interface FenLeiDetailVC : YJViewController
 
 @property (nonatomic,   copy) NSString *brand_id;
 

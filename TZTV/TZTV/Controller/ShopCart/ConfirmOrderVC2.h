@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, ConfirmOrderType) {
     ConfirmOrderTypeFromComfirmOrderVC     = 2
 };
 
-@interface ConfirmOrderVC2 : YJBaseTableVC
+@interface ConfirmOrderVC2 : YJTableViewController
 
 //ConfirmOrderTypeFromComfirmOrderVC
 @property (nonatomic,   copy) NSString      *totalPrice;

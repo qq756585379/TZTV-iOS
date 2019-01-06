@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Luosa. All rights reserved.
 //
 
-@interface FenLeiSearchVC : YJBaseVC
+@interface FenLeiSearchVC : YJViewController
 
 @property (nonatomic,   copy) NSString *keyWord;
 
