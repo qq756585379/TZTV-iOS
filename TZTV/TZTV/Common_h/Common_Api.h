@@ -11,14 +11,10 @@
 
 #define kAbs(__MAINURL__, __CHILDURL__)    [NSString stringWithFormat:@"%@%@", __MAINURL__, __CHILDURL__]
 
-#define DOMAINURL_Inner              @"http://114.55.234.142:8080"
-
+#define DOMAINURL_Inner              @"http://127.0.0.1:8080"
 #define DOMAINURL_MAPI               @"http://mapi.tuzicity.com"
-#define DOMAINURL_release194         @"http://116.62.37.194:8080"
-#define DOMAINURL_release85          @"http://116.62.48.85:8080"
-#define DOMAINURL_web                @"http://web.tuzicity.com"
 
-#define isInner 0
+#define isInner 1
 
 #define DOMAINURL isInner ? DOMAINURL_Inner : DOMAINURL_MAPI
 
@@ -31,7 +27,7 @@
 #define Search_URL              kAbs(DOMAINURL,@"/tztvapi/search/searchGoods?word=%@&page=%d&pageSize=10")
 
 /**登录*/
-#define LOGINURL                kAbs(DOMAINURL,@"/tztvapi/user/login?mobile=%@&password=%@")
+#define LOGINURL                kAbs(DOMAINURL,@"/xboot/login")
 /**注册*/
 #define REGISTURL               kAbs(DOMAINURL,@"/tztvapi/user/regist?id=%@&code=%@&password=%@&imageUrl=%@&nickname=%@&city=%@&address=%@")
 /**发送验证码*/   //type - 1:注册; 2：找回密码;
@@ -42,7 +38,7 @@
 #define getOpenCityListURL      kAbs(DOMAINURL,@"/fileapi/city/getCityList")
 
 /**上传文件 POST int type        //1：头像；2：图片；3：音频；4视频*/   //userId  type
-#define UploadFileUrl           kAbs(DOMAINURL_release85,@"/fileapi/upload/uploadFile")
+#define UploadFileUrl           kAbs(DOMAINURL,@"/fileapi/upload/uploadFile")
 
 /**修改头像*/
 #define ModifyHeadIconUrl       kAbs(DOMAINURL,@"/tztvapi/userInfo/uptUrl?userId=%@&url=%@")
@@ -177,12 +173,12 @@
 /**
  * HtmlUrl
  */
-#define aboutTZ_URL             kAbs(DOMAINURL_web,@"/app/html/about_us.html")
-#define shopDetail              kAbs(DOMAINURL_web,@"/app/html/goods_info.html?goods_id=%@&brand_id=%@")
-#define findURL                 kAbs(DOMAINURL_web,@"/app/html/discover.html")
-#define squareURL               kAbs(DOMAINURL_web,@"/app/html/square.html?market_id=%@")
-#define bannerLinkURL           kAbs(DOMAINURL_web,@"/app/html/banner%d.html")
-#define agreeMentURL            kAbs(DOMAINURL_web,@"/app/html/agreement.html")
+#define aboutTZ_URL             kAbs(DOMAINURL,@"/app/html/about_us.html")
+#define shopDetail              kAbs(DOMAINURL,@"/app/html/goods_info.html?goods_id=%@&brand_id=%@")
+#define findURL                 kAbs(DOMAINURL,@"/app/html/discover.html")
+#define squareURL               kAbs(DOMAINURL,@"/app/html/square.html?market_id=%@")
+#define bannerLinkURL           kAbs(DOMAINURL,@"/app/html/banner%d.html")
+#define agreeMentURL            kAbs(DOMAINURL,@"/app/html/agreement.html")
 
 #define lingquyouhuiquanhtml    kAbs(DOMAINURL,@"/appcoupon/html/coupon.html?telephone=%@&activity_id=8&user_id=%@")
 

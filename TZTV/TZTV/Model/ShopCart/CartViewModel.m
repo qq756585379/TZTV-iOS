@@ -23,7 +23,7 @@
     _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             [MBProgressHUD showMessage:@""];
-            NSString *url=[NSString stringWithFormat:getShopCartListURL,[[AccountTool account] user_id]];
+            NSString *url=[NSString stringWithFormat:getShopCartListURL,[[AccountTool account] pid]];
             [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
                 YJLog(@"getShopCartList===%@",json);
                 [MBProgressHUD hideHUD];

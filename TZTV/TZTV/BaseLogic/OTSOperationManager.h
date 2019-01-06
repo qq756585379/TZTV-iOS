@@ -8,14 +8,6 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-typedef NS_ENUM(NSInteger, ForceTip)
-{
-    kShowAWhile = 0,             //显示一会提示
-    kForceShow,                  //强制显示
-    kForceJump,                  //强行跳转
-    KForceUpdate                 //强制更新模块
-};
-
 @interface OTSOperationManager : AFHTTPSessionManager
 
 /**

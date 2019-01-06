@@ -62,7 +62,7 @@
     }
     if ([AccountTool getAccount:YES]==nil) return;
     NSDictionary *sub_sku=[self selectedSKU];
-    NSString *url=[NSString stringWithFormat:addShopCartURL,[[AccountTool account] user_id],_sku.catalog_name,_sku.ID,sub_sku[@"id"],num];
+    NSString *url=[NSString stringWithFormat:addShopCartURL,[[AccountTool account] pid],_sku.catalog_name,_sku.ID,sub_sku[@"id"],num];
     YJLog(@"url=====%@",url);
     [[YJHttpRequest sharedManager] get:[url yj_stringByAddingPercentEscapesUsingEncoding] params:nil success:^(id json) {
         if ([json[@"code"] isEqualToNumber:@0]) {

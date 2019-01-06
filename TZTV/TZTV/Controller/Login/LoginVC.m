@@ -8,11 +8,13 @@
 
 #import "LoginVC.h"
 #import "AccountTool.h"
+#import "LoginLogic.h"
 #import "UIViewController+YJ.h"
 
 @interface LoginVC ()
 @property (weak, nonatomic) IBOutlet UITextField *TF1;//帐号
 @property (weak, nonatomic) IBOutlet UITextField *TF2;//密码
+@property (nonatomic, strong) LoginLogic *loginLogic;
 @end
 
 @implementation LoginVC
@@ -28,15 +30,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title=@"登录";
-    
+    _TF1.text = @"13376275127";
+    _TF2.text = @"123456";
     [self setNaviButtonType:NaviButton_Return isLeft:YES];
-    [self setNavgationBarBackGroundImage:[UIImage imageWithColor:[UIColor whiteColor]]
-                          andShadowImage:[UIImage imageWithColor:kEDEDED]];
-    
+//    [self setNavgationBarBackGroundImage:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
     [[_TF1.rac_textSignal filter:^BOOL(id value) {
-        // value:源信号的内容
-        // 返回值,就是过滤条件,只有满足这个条件,才能能获取到内容
+        // value:源信号的内容,过滤条件,只有满足这个条件,才能能获取到内容
         return  [value length] == 11;
     }] subscribeNext:^(id x) {
         YJLog(@"%@",x);
@@ -46,7 +45,6 @@
 - (IBAction)login:(UIButton *)sender
 {
     [self cancelFirstResponse];
-    
     if (![_TF1.text isPhoneNo]) {
         [MBProgressHUD showError:@"请输入正确的手机号！"];
         return;
@@ -55,25 +53,17 @@
         [MBProgressHUD showError:@"密码个数至少6位！"];
         return;
     }
-    [MBProgressHUD showMessage:@""];
-    NSString *url = [NSString stringWithFormat:LOGINURL,_TF1.text,_TF2.text];
-    [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
-        [MBProgressHUD hideHUD];
-        YJLog(@"%@",json);
-        if ([json[@"code"] isEqualToNumber:@0]) {//登录成功
-            Account *account=[Account mj_objectWithKeyValues:json[@"data"]];
-            [AccountTool saveAccount:account];
+    WEAK_SELF
+    NSDictionary *dict = @{@"accountName":_TF1.text,@"password":_TF2.text};
+    [self.loginLogic loginWithParma:dict completionBlock:^(id aResponseObject, NSError *anError) {
+        STRONG_SELF
+        if (anError) {
+            [MBProgressHUD showError:@"登录失败"];
+        }else{
             [MBProgressHUD showSuccess:@"登录成功"];
             [self postNotification:LoginSuccess];//发通知
             [self dismissViewControllerAnimated:YES completion:nil];
-//            [YJAppDelegate setUpJPush];
-//            [self loadStuClassInfo:account.user_id];
-        }else{
-            [MBProgressHUD showToast:json[@"msg"]];
         }
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
-        [MBProgressHUD showError:@"登录失败"];
     }];
 }
 
@@ -97,9 +87,12 @@
     [YJRouter routeToDestVc:@"RegistVC0" from:self extraData:nil];
 }
 
-- (void)leftBtnClicked:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
+#pragma mark - Property
+- (LoginLogic *)loginLogic {
+    if (!_loginLogic) {
+        _loginLogic = [LoginLogic logicWithOperationManager:self.operationManager];
+    }
+    return _loginLogic;
 }
 
 @end

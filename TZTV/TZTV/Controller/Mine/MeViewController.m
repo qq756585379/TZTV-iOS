@@ -52,7 +52,7 @@
         return 1;
     }else{
         Account *account = [AccountTool account];//1显示
-        return account.user_type == 1 ? 5 : 4;
+        return account.role == 1 ? 5 : 4;
     }
 }
 

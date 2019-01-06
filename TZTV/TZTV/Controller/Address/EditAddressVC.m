@@ -73,7 +73,7 @@
 {
     [MBProgressHUD showMessage:@""];
     Account *account=[AccountTool account];
-    NSString *url=[NSString stringWithFormat:uptAddressURL,account.user_id,_model.ID,_nameTF.text,_telTF.text,_addressTF.text,_textInputView.text,_switchBtn.isOn,account.token];
+    NSString *url=[NSString stringWithFormat:uptAddressURL,account.pid,_model.ID,_nameTF.text,_telTF.text,_addressTF.text,_textInputView.text,_switchBtn.isOn,@""];
     [[YJHttpRequest sharedManager] get:[url yj_stringByAddingPercentEscapesUsingEncoding] params:nil success:^(id json) {
         YJLog(@"%@",json);
         [MBProgressHUD hideHUD];
@@ -93,7 +93,7 @@
 {
     [MBProgressHUD showMessage:@""];
     Account *account=[AccountTool account];
-    NSString *url=[NSString stringWithFormat:addAddressURL,account.user_id,_nameTF.text,_telTF.text,_addressTF.text,_textInputView.text,_switchBtn.isOn?1:0,account.token];
+    NSString *url=[NSString stringWithFormat:addAddressURL,account.pid,_nameTF.text,_telTF.text,_addressTF.text,_textInputView.text,_switchBtn.isOn?1:0,@""];
     [[YJHttpRequest sharedManager] get:[url yj_stringByAddingPercentEscapesUsingEncoding] params:nil success:^(id json) {
         [MBProgressHUD hideHUD];
         if ([json[@"code"] isEqualToNumber:@0]) {
@@ -112,7 +112,7 @@
 {
     Account *accout=[AccountTool account];
     [MBProgressHUD showMessage:@""];
-    NSString *url=[NSString stringWithFormat:delAddressURL,accout.user_id,_model.ID,accout.token];
+    NSString *url=[NSString stringWithFormat:delAddressURL,accout.pid,_model.ID,nil];
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         [MBProgressHUD hideHUD];
         if ([json[@"code"] isEqualToNumber:@0]) {

@@ -32,7 +32,7 @@
     self.title=@"找回密码";
     self.view.backgroundColor=[UIColor whiteColor];
     if ([self.title isEqualToString:@"修改密码"]) {
-        _TF1.text=[NSString stringWithFormat:@"%@",[[AccountTool account] telephone]];
+        _TF1.text=[NSString stringWithFormat:@"%@",[[AccountTool account] phone]];
     }
 }
 

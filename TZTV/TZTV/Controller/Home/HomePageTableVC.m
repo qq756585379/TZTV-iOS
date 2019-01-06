@@ -163,7 +163,7 @@
         if ([AccountTool getAccount:YES]==nil) return;
         YJWebViewController *web=[YJWebViewController new];
         Account *account=[AccountTool account];
-        web.htmlUrl=[NSString stringWithFormat:lingquyouhuiquanhtml,account.telephone,account.user_id];
+        web.htmlUrl=[NSString stringWithFormat:lingquyouhuiquanhtml,account.phone,account.pid];
         web.title=@"优惠券";
         [self.navigationController pushViewController:web animated:YES];
     }

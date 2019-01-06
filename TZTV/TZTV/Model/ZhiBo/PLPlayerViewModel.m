@@ -96,29 +96,27 @@
     }];
 }
 
-
-
 - (RACSignal *)sendChatDataWithParma:(NSDictionary *)parma{
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        Account *account=[AccountTool account];
-        NSString *url=[NSString stringWithFormat:addChatURL,parma[@"live_id"],account.user_id,account.user_nicname,parma[@"content"],account.token];
-        YJLog(@"addChatURL===%@",url);
-        [[YJHttpRequest sharedManager] get:[url yj_stringByAddingPercentEscapesUsingEncoding] params:nil success:^(id json) {
-            if ([json[@"code"] isEqualToNumber:@0]) {
-                YJLog(@"消息发送成功%@",json);
-                ChatModel *lastChatM=[self.chatArray lastObject];
-                int msg_id= lastChatM ? [lastChatM.msg_id intValue]+1 : 0;
-                ChatModel *chatM=[[ChatModel alloc] initWith:@{@"nicname":account.user_nicname,@"msg_content":parma[@"content"],@"msg_id":[NSString stringWithFormat:@"%d",msg_id]}];
-                [self.chatArray addObject:chatM];
-                [subscriber sendNext:json];
-                [subscriber sendCompleted];
-            }else{
-                [subscriber sendNext:nil];
-                [subscriber sendCompleted];
-            }
-        } failure:^(NSError *error) {
-            [subscriber sendError:error];
-        }];
+//        Account *account=[AccountTool account];
+//        NSString *url=[NSString stringWithFormat:addChatURL,parma[@"live_id"],account.pid,account.nickName,parma[@"content"],account.token];
+//        YJLog(@"addChatURL===%@",url);
+//        [[YJHttpRequest sharedManager] get:[url yj_stringByAddingPercentEscapesUsingEncoding] params:nil success:^(id json) {
+//            if ([json[@"code"] isEqualToNumber:@0]) {
+//                YJLog(@"消息发送成功%@",json);
+//                ChatModel *lastChatM=[self.chatArray lastObject];
+//                int msg_id= lastChatM ? [lastChatM.msg_id intValue]+1 : 0;
+//                ChatModel *chatM=[[ChatModel alloc] initWith:@{@"nicname":account.nickName,@"msg_content":parma[@"content"],@"msg_id":[NSString stringWithFormat:@"%d",msg_id]}];
+//                [self.chatArray addObject:chatM];
+//                [subscriber sendNext:json];
+//                [subscriber sendCompleted];
+//            }else{
+//                [subscriber sendNext:nil];
+//                [subscriber sendCompleted];
+//            }
+//        } failure:^(NSError *error) {
+//            [subscriber sendError:error];
+//        }];
         return nil;
     }];
 }
@@ -135,7 +133,7 @@
 - (RACSignal *)getChatListWithParma:(NSDictionary *)parma{
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         Account *account = [AccountTool account];
-        NSString *user_id = account ? account.user_id : @"0";
+        NSString *user_id = account ? account.pid : @"0";
         ChatModel *lastChatM=[self.chatArray lastObject];
         int msg_id= lastChatM ? [lastChatM.msg_id intValue] : 0;
         NSString *url=[NSString stringWithFormat:getChatListURL,parma[@"live_id"],msg_id,user_id];

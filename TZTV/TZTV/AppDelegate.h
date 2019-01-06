@@ -18,8 +18,6 @@
 
 //在plist文件中，加入View controller-based status bar appearance项，并设置为NO。这样，就能通过代码来显示&隐藏电量条。
 
-//plist文件里的权限申请的key https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW1
-
 //RAC(_loginBtn,enabled) = [RACSignal combineLatest:@[_TelTF.rac_textSignal,
 //                                                    _PwdTF.rac_textSignal]
 //                                           reduce:^id(NSString *telStr,NSString *pwdStr){

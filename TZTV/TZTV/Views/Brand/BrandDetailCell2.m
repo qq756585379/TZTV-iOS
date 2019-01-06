@@ -7,7 +7,6 @@
 //
 
 #import "BrandDetailCell2.h"
-#import "NSString+YJ.h"
 
 @interface BrandDetailCell2()
 @property (weak, nonatomic) IBOutlet UIImageView *iconIV;

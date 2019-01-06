@@ -62,7 +62,7 @@
         return;
     }
     NSString *location=[NSString stringWithFormat:@"%@,%@",[YJUserDefault getValueForKey:LongitudeKey],[YJUserDefault getValueForKey:LatitudeKey]];
-    NSString *url=[NSString stringWithFormat:startLiveURL,[[AccountTool account] user_id],self.huodongTF.text,self.guangchangTF.text,@"1",self.imgUrl,[YJUserDefault getValueForKey:CurrentCityKey],location];
+    NSString *url=[NSString stringWithFormat:startLiveURL,[[AccountTool account] pid],self.huodongTF.text,self.guangchangTF.text,@"1",self.imgUrl,[YJUserDefault getValueForKey:CurrentCityKey],location];
   
     [[YJHttpRequest sharedManager] get:[url yj_stringByAddingPercentEscapesUsingEncoding] params:nil success:^(id json) {
         YJLog(@"%@",json);
@@ -92,7 +92,7 @@
     NSData *data = UIImageJPEGRepresentation(newimage, 0.5);
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     Account *account=[AccountTool account];
-    params[@"userId"] = account.user_id;
+    params[@"userId"] = account.pid;
     params[@"type"] = @2;//1：头像；2：图片
     [MBProgressHUD showMessage:@"上传中"];
     [[YJHttpRequest sharedManager] createAnUploadTask:UploadFileUrl imageData:data andParameters:params success:^(id json) {

@@ -30,7 +30,7 @@
     _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             NSInteger page=isNew?1:_page+1;
-            NSString *url=[NSString stringWithFormat:getOrderByUserIdURL,[[AccountTool account] user_id],page,[self state][type]];
+            NSString *url=[NSString stringWithFormat:getOrderByUserIdURL,[[AccountTool account] pid],page,[self state][type]];
             YJLog(@"%@",url);
             [MBProgressHUD showMessage:@""];
             [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {

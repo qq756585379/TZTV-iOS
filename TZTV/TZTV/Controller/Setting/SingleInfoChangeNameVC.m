@@ -33,11 +33,11 @@
         return;
     }
     Account *account=[AccountTool account];
-    NSString *url=[NSString stringWithFormat:uptNicknameURL,account.user_id,_userNameTF.text];
+    NSString *url=[NSString stringWithFormat:uptNicknameURL,account.pid,_userNameTF.text];
     [[YJHttpRequest sharedManager] get:[url yj_stringByAddingPercentEscapesUsingEncoding] params:nil success:^(id json) {
         if ([json[@"code"] isEqualToNumber:@0]) {
             YJLog(@"%@",json);
-            account.user_nicname=_userNameTF.text;
+            account.nickName=_userNameTF.text;
             [AccountTool saveAccount:account];
             [MBProgressHUD showSuccess:@"设置成功!"];
             [self.navigationController popViewControllerAnimated:YES];

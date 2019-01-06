@@ -101,7 +101,7 @@
 //取消订单
 -(void)cancelOrder:(Account *)account
 {
-    NSString *url=[NSString stringWithFormat:cancelOrderURL,account.user_id,_order.ID,account.token];
+    NSString *url=[NSString stringWithFormat:cancelOrderURL,account.pid,_order.ID,nil];
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         YJLog(@"%@",json);
         if ([json[@"code"] isEqualToNumber:@0]) {
@@ -118,7 +118,7 @@
 //确认收货
 -(void)confirmReceive:(Account *)account
 {
-    NSString *url=[NSString stringWithFormat:confirmReceiveURL,account.user_id,_order.ID,account.token];
+    NSString *url=[NSString stringWithFormat:confirmReceiveURL,account.pid,_order.ID,nil];
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         YJLog(@"%@",json);
         if ([json[@"code"] isEqualToNumber:@0]) {

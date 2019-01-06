@@ -45,11 +45,11 @@
 
 -(void)initData{
     Account *account=[AccountTool account];
-    [_headIcon setCircleImage:account.user_image andPlaceHolderImg:@"225_243"];
-    _nickNameLabel.text=account.user_nicname;
-    _sexLabel.text=[account.user_sex isEqual:@1]?@"男":@"女";
-    _birthdayLabel.text=account.user_birthday;
-    _telLabel.text=account.telephone;
+//    [_headIcon setCircleImage:account.user_image andPlaceHolderImg:@"225_243"];
+//    _nickNameLabel.text=account.user_nicname;
+//    _sexLabel.text=[account.user_sex isEqual:@1]?@"男":@"女";
+//    _birthdayLabel.text=account.user_birthday;
+//    _telLabel.text=account.telephone;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -123,7 +123,7 @@
     NSData *data = UIImageJPEGRepresentation(newimage, 0.5);
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     Account *account=[AccountTool account];
-    params[@"userId"] = account.user_id;
+    params[@"userId"] = account.pid;
     params[@"type"] = @1;
     [MBProgressHUD showMessage:@"头像上传中..."];
     [[YJHttpRequest sharedManager] createAnUploadTask:UploadFileUrl imageData:data andParameters:params success:^(id json) {
@@ -131,7 +131,7 @@
         [MBProgressHUD hideHUD];
         if ([json[@"code"] isEqualToNumber:@0]) {
             [MBProgressHUD showSuccess:@"上传头像成功"];
-            account.user_image=json[@"data"];
+//            account.user_image=json[@"data"];
             [AccountTool saveAccount:account];
             [self modeifyIcon:account];
         }else{
@@ -152,17 +152,17 @@
 #pragma mark - 通知后台跟新头像
 -(void)modeifyIcon:(Account *)account
 {
-    NSString *url=[NSString stringWithFormat:ModifyHeadIconUrl,account.user_id,account.user_image];
-    [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
-        if ([json[@"code"] isEqualToNumber:@0]) {
-            [[SDImageCache sharedImageCache] removeImageForKey:account.user_image withCompletion:nil];
-            [self.headIcon setCircleImage:account.user_image andPlaceHolderImg:@"60_60"];
-        }else{
-            [MBProgressHUD showToast:json[@"msg"]];
-        }
-    } failure:^(NSError *error) {
-        
-    }];
+//    NSString *url=[NSString stringWithFormat:ModifyHeadIconUrl,account.pid,account.user_image];
+//    [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
+//        if ([json[@"code"] isEqualToNumber:@0]) {
+////            [[SDImageCache sharedImageCache] removeImageForKey:account.user_image withCompletion:nil];
+////            [self.headIcon setCircleImage:account.user_image andPlaceHolderImg:@"60_60"];
+//        }else{
+//            [MBProgressHUD showToast:json[@"msg"]];
+//        }
+//    } failure:^(NSError *error) {
+//        
+//    }];
 }
 
 @end

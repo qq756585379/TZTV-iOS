@@ -7,14 +7,12 @@
 //
 
 #import "PhoneTBC.h"
-#import "OTSOperationManager.h"
 #import "PhoneTabBarItem.h"
 #import "YJNav.h"
 
 @interface PhoneTBC () <UITabBarControllerDelegate>
 @property (nonatomic, strong) YJTabBar *customTabBar;
 @property (nonatomic, assign) NSUInteger lastSelectedIndex;
-@property (nonatomic, strong) OTSOperationManager *operationManager;
 @end
 
 @implementation PhoneTBC
@@ -33,62 +31,48 @@
     selectedAttrs[NSFontAttributeName] = attrs[NSFontAttributeName];
     selectedAttrs[NSForegroundColorAttributeName] = YJNaviColor;
     
-    UITabBarItem *item = [UITabBarItem appearance];
-    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
-    [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:attrs forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self config0_1];
-}
-
--(void)config0_1
-{
+    
+    [[YJRouter sharedInstance] registerRootVC:self];
+    [[YJRouter sharedInstance] registerTabArray:@[@"home", @"category", @"", @"cart", @"mystore"]];
+    
     UIViewController *homePage = [NSClassFromString(@"HomePageTableVC") new];
-    UIViewController *zhiboVc = [NSClassFromString(@"ZhiBoListTableVC") new];
-    UIViewController *meVc = [sb instantiateViewControllerWithIdentifier:@"MeViewController"];
-    
-    YJNav *nav1=[[YJNav alloc] initWithRootViewController:homePage];
-    YJNav *nav2=[[YJNav alloc] initWithRootViewController:zhiboVc];
-    YJNav *nav3=[[YJNav alloc] initWithRootViewController:meVc];
-    
-    [nav1 updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
-    [nav2 updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
-    [nav3 updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
-    
-    [self setupChildVc:nav1 title:@"首页" image:@"home" selectedImage:@"home_click"];
-    [self setupChildVc:nav2 title:@"兔子秀" image:@"live" selectedImage:@"liveselected"];
-    [self setupChildVc:nav3 title:@"我的" image:@"my" selectedImage:@"my_selected"];
-}
-
--(void)config0_2
-{
-    UIViewController *homePage = [NSClassFromString(@"HomeTableVC2") new];
     UIViewController *fenleiVc = [NSClassFromString(@"FenLeiTableVC") new];
-    UIViewController *brandVC = [NSClassFromString(@"BrandVC") new];
+    UIViewController *zhiboVc = [NSClassFromString(@"ZhiBoListTableVC") new];
     UIViewController *shopCartVC = [NSClassFromString(@"ShopCartVC") new];
     UIViewController *meVc = [sb instantiateViewControllerWithIdentifier:@"MeViewController"];
     
     YJNav *nav1=[[YJNav alloc] initWithRootViewController:homePage];
     YJNav *nav2=[[YJNav alloc] initWithRootViewController:fenleiVc];
-    YJNav *nav3=[[YJNav alloc] initWithRootViewController:brandVC];
+    YJNav *nav3=[[YJNav alloc] initWithRootViewController:zhiboVc];
     YJNav *nav4=[[YJNav alloc] initWithRootViewController:shopCartVC];
     YJNav *nav5=[[YJNav alloc] initWithRootViewController:meVc];
-
+    
     [nav1 updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
     [nav2 updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
     [nav3 updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
     [nav4 updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
     [nav5 updateNavBarBg:[UIImage imageWithColor:[UIColor whiteColor]] andShadowImage:[UIImage imageWithColor:kEDEDED]];
-
+    
     [self setupChildVc:nav1 title:@"首页" image:@"home" selectedImage:@"home_click"];
-    [self setupChildVc:nav2 title:@"品牌" image:@"brand" selectedImage:@"brand_selected"];
-    [self setupChildVc:nav3 title:@"直播" image:@"live" selectedImage:@"liveselected"];
+    [self setupChildVc:nav2 title:@"分类" image:@"brand" selectedImage:@"brand_selected"];
+    [self setupChildVc:nav3 title:@"兔子秀" image:@"live" selectedImage:@"liveselected"];
     [self setupChildVc:nav4 title:@"购物车" image:@"shopping" selectedImage:@"shopping_card_selected"];
     [self setupChildVc:nav5 title:@"我的" image:@"my" selectedImage:@"my_selected"];
 }
+
+//-(void)config0_2
+//{
+//    UIViewController *homePage = [NSClassFromString(@"HomeTableVC2") new];
+//    UIViewController *brandVC = [NSClassFromString(@"BrandVC") new];
+//    [self setupChildVc:nav2 title:@"品牌" image:@"brand" selectedImage:@"brand_selected"];
+//}
 
 - (void)setupChildVc:(YJNav *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
@@ -106,12 +90,6 @@
     //            [self.web loadUrl:findURL];
     //        }
     //    }
-}
-
-- (void)_PhoneTBC_setup
-{
-    [[YJRouter sharedInstance] registerRootVC:self];
-    [[YJRouter sharedInstance] registerTabArray:@[@"home", @"category", @"", @"cart", @"mystore"]];
 }
 
 //- (void)_PhoneTBC_setupVCs

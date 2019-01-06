@@ -93,7 +93,7 @@ static NSString *status[] = {
 -(void)p_initData{
     NSDictionary *json=@{@"live_id":_live_id,
                          @"live_user_id":_live_user_id,
-                         @"user_id":[[AccountTool account] user_id] ? [[AccountTool account] user_id]:@"0"};
+                         @"user_id":[[AccountTool account] pid] ? [[AccountTool account] pid]:@"0"};
     [[self.playerVM configDataWithJson:json] subscribeNext:^(id x) {
         [self p_updateMainView];
     } error:^(NSError *error) {
@@ -272,8 +272,8 @@ static NSString *status[] = {
         if ([AccountTool getAccount:YES]==nil) return;
         [YJTOOL showMoreLoveAnimateFromView:_loveBtn addToView:self.view];//冒星星
         Account *account=[AccountTool account];
-        NSString *url=[NSString stringWithFormat:addLikeURL,_live_id,account.user_id,account.token];
-        [[YJHttpRequest sharedManager] get:url params:nil success:nil failure:nil];
+//        NSString *url=[NSString stringWithFormat:addLikeURL,_live_id,account.pid,account.token];
+//        [[YJHttpRequest sharedManager] get:url params:nil success:nil failure:nil];
     }else if (sender.tag==99) {//发送评论
         if (self.textField.text.length==0){
             [MBProgressHUD showToast:@"内容不能为空"];

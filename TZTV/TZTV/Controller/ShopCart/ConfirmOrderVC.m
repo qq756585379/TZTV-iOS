@@ -43,7 +43,7 @@
 
 -(void)getDefaultAddress{
     Account *account=[AccountTool account];
-    NSString *url=[NSString stringWithFormat:getDefaultAddressURL,account.user_id,account.token];
+    NSString *url=[NSString stringWithFormat:getDefaultAddressURL,account.pid,nil];
     [MBProgressHUD showMessage:@""];
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         [MBProgressHUD hideHUD];
@@ -176,7 +176,7 @@
     }
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"user_id"] = [[AccountTool account] user_id];
+    params[@"user_id"] = [[AccountTool account] pid];
     params[@"order_name"] =self.addressM.name;
     params[@"order_phone"] =self.addressM.phone;
     params[@"order_address"] =[NSString stringWithFormat:@"%@%@",self.addressM.address,self.addressM.detail];

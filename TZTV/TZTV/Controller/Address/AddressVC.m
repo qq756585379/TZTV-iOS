@@ -38,25 +38,25 @@
 -(void)loadAddressList{
     Account *account=[AccountTool account];
     [MBProgressHUD showMessage:@""];
-    NSString *url=[NSString stringWithFormat:getAddressListURL,account.user_id,account.token];
-    [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
-        YJLog(@"%@",json);
-        [MBProgressHUD hideHUD];
-        [self.tableView.mj_header endRefreshing];
-        if ([json[@"code"] isEqualToNumber:@0]) {
-            self.dataArray=[AddressModel mj_objectArrayWithKeyValuesArray:json[@"data"]];
-            [self showPlaceHolderViewWithInfo:@"未添加收获地址" imageName:@"placeholder"
-                                  buttonTitle:@"添加地址" show:self.dataArray.count?NO:YES];
-        }else{
-            [self showPlaceHolderViewWithInfo:json[@"msg"] imageName:@"placeholder"
-                                  buttonTitle:@"刷新" show:self.dataArray.count?NO:YES];
-        }
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
-        [self.tableView.mj_header endRefreshing];
-        [self showPlaceHolderViewWithInfo:@"网络不太好" imageName:@"placeholder"
-                              buttonTitle:@"刷新" show:self.dataArray.count?NO:YES];
-    }];
+//    NSString *url=[NSString stringWithFormat:getAddressListURL,account.pid,account.token];
+//    [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
+//        YJLog(@"%@",json);
+//        [MBProgressHUD hideHUD];
+//        [self.tableView.mj_header endRefreshing];
+//        if ([json[@"code"] isEqualToNumber:@0]) {
+//            self.dataArray=[AddressModel mj_objectArrayWithKeyValuesArray:json[@"data"]];
+//            [self showPlaceHolderViewWithInfo:@"未添加收获地址" imageName:@"placeholder"
+//                                  buttonTitle:@"添加地址" show:self.dataArray.count?NO:YES];
+//        }else{
+//            [self showPlaceHolderViewWithInfo:json[@"msg"] imageName:@"placeholder"
+//                                  buttonTitle:@"刷新" show:self.dataArray.count?NO:YES];
+//        }
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD hideHUD];
+//        [self.tableView.mj_header endRefreshing];
+//        [self showPlaceHolderViewWithInfo:@"网络不太好" imageName:@"placeholder"
+//                              buttonTitle:@"刷新" show:self.dataArray.count?NO:YES];
+//    }];
 }
 
 -(void)showPlaceHolderViewWithInfo:(NSString *)info imageName:(NSString *)img buttonTitle:(NSString *)title show:(BOOL)show{

@@ -70,7 +70,7 @@
     }
     Account *account=[AccountTool account];
     NSDictionary *parma=@{
-                          @"user_id":account.user_id,
+                          @"user_id":account.pid,
                           @"order_no":_orderSon.order_no,
                           @"goods_id":_orderSon.goods_id,
                           @"order_goods_id":_orderSon.ID,
@@ -78,8 +78,8 @@
                           @"refund_type":_refund_type,
                           @"refund_reason":_refundReason.length?_refundReason:@"",
                           @"refund_remark":_refundDes.length?_refundDes:@"",
-                          @"refund_imgs":@"",
-                          @"token":account.token
+                          @"refund_imgs":@""
+//                          @"token":account.token
                           };
     [[YJHttpRequest sharedManager] post:addRefundURL params:parma success:^(id json) {
         YJLog(@"%@",json);

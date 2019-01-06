@@ -113,9 +113,9 @@
     NSString *url=@"";
     if (self.type==ConfirmOrderTypeFromMyOrderSon) {
         //ids/user_id/pay_type --0为微信支付;1：支付宝；2：钱包；3：银联；4：现金；/pay_method --0：支付,1：充值
-        url=[NSString stringWithFormat:getPayDataURL,_order.order_no,[[AccountTool account] user_id],_weixinBtn.selected?0:1,0];
+        url=[NSString stringWithFormat:getPayDataURL,_order.order_no,[[AccountTool account] pid],_weixinBtn.selected?0:1,0];
     }else{
-        url=[NSString stringWithFormat:getPayDataURL,_data,[[AccountTool account] user_id],_weixinBtn.selected?0:1,0];
+        url=[NSString stringWithFormat:getPayDataURL,_data,[[AccountTool account] pid],_weixinBtn.selected?0:1,0];
     }
     YJLog(@"%@",url);
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {

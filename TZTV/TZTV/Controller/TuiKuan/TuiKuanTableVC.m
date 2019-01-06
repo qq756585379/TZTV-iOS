@@ -35,22 +35,22 @@
 -(void)loadNewData{
     [MBProgressHUD showMessage:@""];
     Account *account=[AccountTool account];
-    NSString *url=[NSString stringWithFormat:getRefundGoodsListURL,account.user_id,1,account.token];
-    [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
-        [MBProgressHUD hideHUD];
-        [self.tableView.mj_header endRefreshing];
-        YJLog(@"%@",json);
-        if ([json[@"code"] isEqualToNumber:@0]) {
-            
-        }else{
-            [MBProgressHUD showToast:json[@"msg"]];
-        }
-        [self showPlaceHolderViewWithInfo:@"暂无数据" imageName:@"placeholder"
-                              buttonTitle:@"" show:(self.dataArray.count==0)];
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUD];
-        [self.tableView.mj_header endRefreshing];
-    }];
+//    NSString *url=[NSString stringWithFormat:getRefundGoodsListURL,account.pid,1,account.token];
+//    [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
+//        [MBProgressHUD hideHUD];
+//        [self.tableView.mj_header endRefreshing];
+//        YJLog(@"%@",json);
+//        if ([json[@"code"] isEqualToNumber:@0]) {
+//            
+//        }else{
+//            [MBProgressHUD showToast:json[@"msg"]];
+//        }
+//        [self showPlaceHolderViewWithInfo:@"暂无数据" imageName:@"placeholder"
+//                              buttonTitle:@"" show:(self.dataArray.count==0)];
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD hideHUD];
+//        [self.tableView.mj_header endRefreshing];
+//    }];
 }
 
 -(void)showPlaceHolderViewWithInfo:(NSString *)info imageName:(NSString *)img buttonTitle:(NSString *)title show:(BOOL)show{

@@ -40,7 +40,7 @@
 
 -(void)requestData{
     [MBProgressHUD showMessage:@""];
-    NSString *url=[NSString stringWithFormat:getCouponListURL,[[AccountTool account] user_id]];
+    NSString *url=[NSString stringWithFormat:getCouponListURL,[[AccountTool account] pid]];
     YJLog(@"%@",url);
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         [MBProgressHUD hideHUD];

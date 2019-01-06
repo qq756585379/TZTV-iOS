@@ -53,12 +53,6 @@ HMSingletonM(Manager)
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) failure(error);
     }];
-    
-//    if ([self isNetWorkConnectAvailiable]) {
-//        
-//    }else{
-//        
-//    }
 }
 
 - (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure{
@@ -72,7 +66,7 @@ HMSingletonM(Manager)
 }
 
 - (void)createAnUploadTask:(NSString *)urlStr imageData:(NSData *)imageData andParameters:(NSDictionary *)paramDic success:(void (^)(id json))success failure:(void (^)(NSError *error))failure{
-    
+
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:urlStr parameters:paramDic constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"yyyyMMddHHmmss";

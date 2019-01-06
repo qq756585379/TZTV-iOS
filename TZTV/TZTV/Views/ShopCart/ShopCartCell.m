@@ -56,7 +56,7 @@
         [MBProgressHUD showToast:@"库存不够"];
         return;
     }
-    NSString *url=[NSString stringWithFormat:uptShopCartURL,[[AccountTool account] user_id],_smallModel.ID,num+1];
+    NSString *url=[NSString stringWithFormat:uptShopCartURL,[[AccountTool account] pid],_smallModel.ID,num+1];
     NSLog(@"add======%@",url);
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         if ([json[@"code"] isEqualToNumber:@0]) {
@@ -77,7 +77,7 @@
     NSInteger num=[_countTF.text integerValue];
     if (num == 1) return;
     
-    NSString *url=[NSString stringWithFormat:uptShopCartURL,[[AccountTool account] user_id],_smallModel.ID,num-1];
+    NSString *url=[NSString stringWithFormat:uptShopCartURL,[[AccountTool account] pid],_smallModel.ID,num-1];
     NSLog(@"reduce======%@",url);
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         if ([json[@"code"] isEqualToNumber:@0]) {

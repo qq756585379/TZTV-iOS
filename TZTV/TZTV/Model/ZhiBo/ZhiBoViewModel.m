@@ -27,7 +27,7 @@
             NSString *user_id=@"0";
             Account *account=[AccountTool account];
             if (account) {
-                user_id=account.user_id;
+                user_id=account.pid;
             }
             NSString *url=[NSString stringWithFormat:getChatListURL,info[@"live_id"],self.msg_id,user_id];
             YJLog(@"getChatListURL==%@",url);

@@ -39,7 +39,7 @@
     [self.chatTV registerClass:[ChatCell class] forCellReuseIdentifier:[ChatCell cellReuseIdentifier]];
     
     Account *account=[AccountTool account];
-    [self.zhuboIcon setCircleImage:account.user_image andPlaceHolderImg:@"头像"];
+//    [self.zhuboIcon setCircleImage:account.user_image andPlaceHolderImg:@"头像"];
     
 //    [self.session startWithPushURL:[NSURL URLWithString:_info[@"live_rtmp_publish_url"]] feedback:^(PLStreamStartStateFeedback feedback) {
 //        NSString *log = [NSString stringWithFormat:@"session start state %lu",(unsigned long)feedback];

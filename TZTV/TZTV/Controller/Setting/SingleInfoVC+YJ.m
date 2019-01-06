@@ -18,13 +18,13 @@
 {
     Account *account=[AccountTool account];
     //未知；1；男；2：女
-    NSString *url=[NSString stringWithFormat:uptSexURL,account.user_id,index+1];
+    NSString *url=[NSString stringWithFormat:uptSexURL,account.pid,index+1];
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         if ([json[@"code"] isEqualToNumber:@0]) {
             YJLog(@"%@",json);
             [MBProgressHUD showSuccess:@"设置成功!"];
             sexLabel.text=(index==0)?@"男":@"女";
-            account.user_sex=[NSNumber numberWithInteger:index+1];
+//            account.user_sex=[NSNumber numberWithInteger:index+1];
             [AccountTool saveAccount:account];
         }else{
             [MBProgressHUD showError:json[@"msg"]];
@@ -42,12 +42,12 @@
     NSDate *minDate = [calendar dateFromComponents:minimumDateComponents];
     [ActionSheetDatePicker showPickerWithTitle:@"" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] minimumDate:minDate maximumDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
         Account *account=[AccountTool account];
-        NSString *url=[NSString stringWithFormat:uptBirthdayURL,account.user_id,[selectedDate stringFromDateWithFormat:@"yyyy-MM-dd"]];
+        NSString *url=[NSString stringWithFormat:uptBirthdayURL,account.pid,[selectedDate stringFromDateWithFormat:@"yyyy-MM-dd"]];
         [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
             if ([json[@"code"] isEqualToNumber:@0]) {
                 YJLog(@"%@",json);
                 birthdayLabel.text=[selectedDate stringFromDateWithFormat:@"yyyy-MM-dd"];
-                account.user_birthday=[selectedDate stringFromDateWithFormat:@"yyyy-MM-dd"];
+//                account.user_birthday=[selectedDate stringFromDateWithFormat:@"yyyy-MM-dd"];
                 [AccountTool saveAccount:account];
                 [MBProgressHUD showSuccess:@"设置成功!"];
             }else{

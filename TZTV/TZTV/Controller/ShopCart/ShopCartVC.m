@@ -193,7 +193,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     CartModel *bigModel=self.cartViewModel.modelArray[indexPath.section];
     ShopCartModel *shop=[bigModel.array safeObjectAtIndex:indexPath.row];
-    NSString *url=[NSString stringWithFormat:delShopCartURL,[[AccountTool account] user_id],shop.ID];
+    NSString *url=[NSString stringWithFormat:delShopCartURL,[[AccountTool account] pid],shop.ID];
     YJLog(@"%@",url);
     [[YJHttpRequest sharedManager] get:url params:nil success:^(id json) {
         YJLog(@"%@",json);

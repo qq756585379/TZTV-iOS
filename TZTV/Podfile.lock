@@ -15,7 +15,6 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Aspects (1.4.1)
   - BarrageRenderer (2.1.0)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
@@ -50,8 +49,8 @@ PODS:
   - SVProgressHUD (2.2.5)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - YJHomeKit (0.0.3):
-    - Aspects
     - Masonry
+    - MBProgressHUD
     - PureLayout
     - ReactiveObjC
 
@@ -79,7 +78,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
     - AFNetworking
-    - Aspects
     - BarrageRenderer
     - BlocksKit
     - FMDB
@@ -103,7 +101,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BarrageRenderer: 00e5f8081d81f29c1fc12712ddf2f875bd9c6f77
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
@@ -119,8 +116,8 @@ SPEC CHECKSUMS:
   SKTagView: 59cdadcd16e4a09300746ad1811a72371e1327f7
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
-  YJHomeKit: 86c69e4795067ce00167d327e042948028c553bb
+  YJHomeKit: 23feda6a3804e578c49d1e8e2e964e3ed0ba589d
 
-PODFILE CHECKSUM: 8b0877befc42d6980464e8a24c950e0515b11e33
+PODFILE CHECKSUM: c68fd9129ddfefee913f72278f49be87bf485b4e
 
 COCOAPODS: 1.5.3
