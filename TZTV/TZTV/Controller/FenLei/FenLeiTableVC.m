@@ -68,16 +68,18 @@
     }];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
+//    return self.dataArray.count;
+    return 10;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FenLeiTableCell *cell=[tableView dequeueReusableCellWithIdentifier:[FenLeiTableCell cellReuseIdentifier] forIndexPath:indexPath];
-    cell.bigModel=[self.dataArray safeObjectAtIndex:indexPath.row];
+//    cell.bigModel=[self.dataArray safeObjectAtIndex:indexPath.row];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     FenLeiModel *bigModel=[self.dataArray safeObjectAtIndex:indexPath.row];
-    return [FenLeiTableCell heightForCellData:bigModel.brandList];
+//    return [FenLeiTableCell heightForCellData:bigModel.brandList];
+    return ScreenW*260/750 + ((5-1)/3 + 1)*(ScreenW/3);;
 }
 
 -(void)goToSearchVC{

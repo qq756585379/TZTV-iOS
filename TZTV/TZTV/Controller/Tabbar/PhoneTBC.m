@@ -43,7 +43,7 @@
     [[YJRouter sharedInstance] registerTabArray:@[@"home", @"category", @"", @"cart", @"mystore"]];
     
     UIViewController *homePage = [NSClassFromString(@"HomePageTableVC") new];
-    UIViewController *fenleiVc = [NSClassFromString(@"FenLeiTableVC") new];
+    UIViewController *fenleiVc = [NSClassFromString(@"CategoryViewController") new];
     UIViewController *zhiboVc = [NSClassFromString(@"ZhiBoListTableVC") new];
     UIViewController *shopCartVC = [NSClassFromString(@"ShopCartVC") new];
     UIViewController *meVc = [sb instantiateViewControllerWithIdentifier:@"MeViewController"];

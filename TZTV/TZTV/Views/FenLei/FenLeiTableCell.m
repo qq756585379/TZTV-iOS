@@ -10,6 +10,7 @@
 #import "FenLeiCollectionCell.h"
 #import "FenLeiDetailVC.h"
 #import "FenLeiSearchVC.h"
+#import "YJNav.h"
 
 @interface FenLeiTableCell()
 @property (nonatomic, strong) YJBlockImageView *imageV;
@@ -32,13 +33,14 @@
     [self.contentView addSubview:self.imageV];
     [self.imageV autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
     [self.imageV autoSetDimension:ALDimensionHeight toSize:ScreenW*260/750];
+    self.imageV.image = [UIImage imageNamed:@"144"];
     
     WEAK_SELF
     [self.imageV setBlock:^(YJBlockImageView *sender) {
         FenLeiSearchVC *vc = [FenLeiSearchVC new];
         vc.keyWord=weakSelf.bigModel.name;
-//        YJNav *nvc = [[YJNav alloc] initWithRootViewController:vc];
-//        [[YJTOOL getRootControllerSelectedVc] presentViewController:nvc animated:YES completion:nil];
+        YJNav *nvc = [[YJNav alloc] initWithRootViewController:vc];
+        [[YJTOOL getRootControllerSelectedVc] presentViewController:nvc animated:YES completion:nil];
     }];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -48,8 +50,7 @@
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
     
-    UICollectionView *collectView = [[UICollectionView alloc]
-                                     initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    UICollectionView *collectView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     [self.contentView addSubview:collectView];
     [collectView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
     [collectView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.imageV];
@@ -81,7 +82,8 @@
 
 #pragma mark - Collection view data souce
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.bigModel.brandList.count;
+//    return self.bigModel.brandList.count;
+    return 10;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FenLeiCollectionCell *item=[collectionView dequeueReusableCellWithReuseIdentifier:[FenLeiCollectionCell cellReuseIdentifier] forIndexPath:indexPath];

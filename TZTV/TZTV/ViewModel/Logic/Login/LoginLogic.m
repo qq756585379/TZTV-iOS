@@ -7,16 +7,14 @@
 //
 
 #import "LoginLogic.h"
-#import "LoginInterface.h"
 
 @implementation LoginLogic
 
 - (void)loginWithParma:(NSDictionary *)dict completionBlock:(YJCompletionBlock)aCompletionBlock
 {
-    
     WEAK_SELF
     [MBProgressHUD showMessage:@""];
-    YJOperationParam *param = [LoginInterface getLoginParam:dict completionBlock:^(id aResponseObject, NSError *anError) {
+    YJOperationParam *param = [YJOperationParam paramWithUrl:LOGINURL type:kRequestPost param:dict callback:^(id aResponseObject, NSError *anError) {
         STRONG_SELF
         [MBProgressHUD hideHUD];
         if (!anError) {
@@ -24,11 +22,10 @@
             [AccountTool saveAccount:account];
         }
         [self performInMainThreadBlock:^{
-            if (aCompletionBlock){
-                aCompletionBlock(aResponseObject, anError);
-            }
+            !aCompletionBlock ? : aCompletionBlock(aResponseObject, anError);
         }];
     }];
+    
     [self.operationManger requestWithParam:param];
 }
 

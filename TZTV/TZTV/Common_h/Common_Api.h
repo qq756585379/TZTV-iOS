@@ -25,6 +25,8 @@
 /**分类*/
 #define FenLei_URL              kAbs(DOMAINURL,@"/tztvapi/brand/getAllBrand")
 #define Search_URL              kAbs(DOMAINURL,@"/tztvapi/search/searchGoods?word=%@&page=%d&pageSize=10")
+#define Classify_URL            kAbs(DOMAINURL,@"/xmall/category/list")
+
 
 /**登录*/
 #define LOGINURL                kAbs(DOMAINURL,@"/xboot/login")

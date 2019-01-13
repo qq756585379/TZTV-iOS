@@ -9,6 +9,9 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+
+#define YJBGColor RGB(245,245,245)
+
 #import <YJHomeKit/YJHomeKit.h>
 
 #import <UIKit/UIKit.h>

@@ -101,10 +101,15 @@
 		B8FB77F71DDBF743009C32AF /* NSString+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FB77F61DDBF743009C32AF /* NSString+safe.m */; };
 		B8FB78061DDC45B4009C32AF /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FB78051DDC45B4009C32AF /* UIScrollView+APParallaxHeader.m */; };
 		C8042BE7394DFED74B2525B5 /* libPods-TZTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F5A196806430044C44FF4D /* libPods-TZTV.a */; };
+		D404BE0121E4F0AE00E2BCD1 /* DCGoodsSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D404BDFF21E4F0AE00E2BCD1 /* DCGoodsSortCell.m */; };
+		D404BE0421E4F21200E2BCD1 /* DCBrandsSortHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D404BE0321E4F21200E2BCD1 /* DCBrandsSortHeadView.m */; };
+		D414569E21E39B0000940340 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D414569D21E39B0000940340 /* CategoryViewController.m */; };
+		D41456A421E39F2700940340 /* ClassifyLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = D41456A321E39F2700940340 /* ClassifyLogic.m */; };
+		D41456AC21E3A14800940340 /* ClassCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D41456AB21E3A14800940340 /* ClassCategoryCell.m */; };
+		D41456AF21E3A1F200940340 /* ClassifyVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D41456AE21E3A1F200940340 /* ClassifyVO.m */; };
 		D423C1D821E200EB007DF322 /* BaseLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = D423C1D721E200EB007DF322 /* BaseLogic.m */; };
 		D423C1DB21E2016E007DF322 /* LoginLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = D423C1DA21E2016E007DF322 /* LoginLogic.m */; };
 		D423C1EA21E210F5007DF322 /* NetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = D423C1E921E210F5007DF322 /* NetworkInterface.m */; };
-		D423C1F021E211D4007DF322 /* LoginInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = D423C1EF21E211D4007DF322 /* LoginInterface.m */; };
 		D44BF6E421E06EA100472B53 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44BF6E221E06EA100472B53 /* MeViewController.m */; };
 		D44BF6EC21E072CB00472B53 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D44BF6EA21E072CB00472B53 /* Account.m */; };
 		D44BF6EF21E0730D00472B53 /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D44BF6EE21E0730D00472B53 /* AccountTool.m */; };
@@ -439,14 +444,24 @@
 		B8FB78041DDC45B4009C32AF /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
 		B8FB78051DDC45B4009C32AF /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
 		CC56F73976A2EA7A753BC63D /* Pods-TZTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TZTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TZTV/Pods-TZTV.debug.xcconfig"; sourceTree = "<group>"; };
+		D404BDFF21E4F0AE00E2BCD1 /* DCGoodsSortCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGoodsSortCell.m; sourceTree = "<group>"; };
+		D404BE0021E4F0AE00E2BCD1 /* DCGoodsSortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGoodsSortCell.h; sourceTree = "<group>"; };
+		D404BE0221E4F21200E2BCD1 /* DCBrandsSortHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCBrandsSortHeadView.h; sourceTree = "<group>"; };
+		D404BE0321E4F21200E2BCD1 /* DCBrandsSortHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCBrandsSortHeadView.m; sourceTree = "<group>"; };
+		D414569C21E39B0000940340 /* CategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		D414569D21E39B0000940340 /* CategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		D41456A221E39F2700940340 /* ClassifyLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassifyLogic.h; sourceTree = "<group>"; };
+		D41456A321E39F2700940340 /* ClassifyLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassifyLogic.m; sourceTree = "<group>"; };
+		D41456AA21E3A14800940340 /* ClassCategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassCategoryCell.h; sourceTree = "<group>"; };
+		D41456AB21E3A14800940340 /* ClassCategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassCategoryCell.m; sourceTree = "<group>"; };
+		D41456AD21E3A1F200940340 /* ClassifyVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassifyVO.h; sourceTree = "<group>"; };
+		D41456AE21E3A1F200940340 /* ClassifyVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassifyVO.m; sourceTree = "<group>"; };
 		D423C1D621E200EB007DF322 /* BaseLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseLogic.h; sourceTree = "<group>"; };
 		D423C1D721E200EB007DF322 /* BaseLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseLogic.m; sourceTree = "<group>"; };
 		D423C1D921E2016E007DF322 /* LoginLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginLogic.h; sourceTree = "<group>"; };
 		D423C1DA21E2016E007DF322 /* LoginLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginLogic.m; sourceTree = "<group>"; };
 		D423C1E821E210F5007DF322 /* NetworkInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkInterface.h; sourceTree = "<group>"; };
 		D423C1E921E210F5007DF322 /* NetworkInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkInterface.m; sourceTree = "<group>"; };
-		D423C1EE21E211D4007DF322 /* LoginInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginInterface.h; sourceTree = "<group>"; };
-		D423C1EF21E211D4007DF322 /* LoginInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginInterface.m; sourceTree = "<group>"; };
 		D44BF6E221E06EA100472B53 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		D44BF6E321E06EA100472B53 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		D44BF6EA21E072CB00472B53 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
@@ -1279,6 +1294,48 @@
 			path = "UIScrollView+";
 			sourceTree = "<group>";
 		};
+		D414569B21E39AD800940340 /* Classify(分类) */ = {
+			isa = PBXGroup;
+			children = (
+				D41456A921E3A11F00940340 /* Model */,
+				D41456A821E3A11A00940340 /* View */,
+				D414569C21E39B0000940340 /* CategoryViewController.h */,
+				D414569D21E39B0000940340 /* CategoryViewController.m */,
+			);
+			path = "Classify(分类)";
+			sourceTree = "<group>";
+		};
+		D41456A021E39F0000940340 /* Classify */ = {
+			isa = PBXGroup;
+			children = (
+				D41456A221E39F2700940340 /* ClassifyLogic.h */,
+				D41456A321E39F2700940340 /* ClassifyLogic.m */,
+			);
+			path = Classify;
+			sourceTree = "<group>";
+		};
+		D41456A821E3A11A00940340 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D404BE0221E4F21200E2BCD1 /* DCBrandsSortHeadView.h */,
+				D404BE0321E4F21200E2BCD1 /* DCBrandsSortHeadView.m */,
+				D404BE0021E4F0AE00E2BCD1 /* DCGoodsSortCell.h */,
+				D404BDFF21E4F0AE00E2BCD1 /* DCGoodsSortCell.m */,
+				D41456AA21E3A14800940340 /* ClassCategoryCell.h */,
+				D41456AB21E3A14800940340 /* ClassCategoryCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D41456A921E3A11F00940340 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D41456AD21E3A1F200940340 /* ClassifyVO.h */,
+				D41456AE21E3A1F200940340 /* ClassifyVO.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D423C1D521E200D0007DF322 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1291,7 +1348,6 @@
 		D423C1E721E210D6007DF322 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				D423C1ED21E21195007DF322 /* Login */,
 				D423C1EB21E21185007DF322 /* Base */,
 			);
 			path = Factory;
@@ -1306,18 +1362,10 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		D423C1ED21E21195007DF322 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				D423C1EE21E211D4007DF322 /* LoginInterface.h */,
-				D423C1EF21E211D4007DF322 /* LoginInterface.m */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		D423C1F121E211FB007DF322 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				D41456A021E39F0000940340 /* Classify */,
 				D4E0C7E321E1120400B6F6BB /* Login */,
 				D423C1D521E200D0007DF322 /* Base */,
 			);
@@ -1346,6 +1394,7 @@
 		D44BF6E021E06E4E00472B53 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D414569B21E39AD800940340 /* Classify(分类) */,
 				D4E0C7D221E10CA800B6F6BB /* Login */,
 				D44BF8B221E0AAF400472B53 /* Home */,
 				B8A53B0D1E5580620027BDFA /* Tabbar */,
@@ -2215,6 +2264,7 @@
 				D44BF8C121E0AAF400472B53 /* ShowPictureVC.m in Sources */,
 				D44BF79521E0809100472B53 /* BrandBuyCell2.m in Sources */,
 				D44BF85E21E0857B00472B53 /* MyOrderHeader.m in Sources */,
+				D41456AC21E3A14800940340 /* ClassCategoryCell.m in Sources */,
 				D44BF82621E0841700472B53 /* HomepageTitleView.m in Sources */,
 				D44BF87B21E085D300472B53 /* TuiKuangCell5.m in Sources */,
 				D44BF84021E0853E00472B53 /* MyOrderFatherVC.m in Sources */,
@@ -2255,6 +2305,7 @@
 				D44BF7E021E0820D00472B53 /* SqureHeadView.m in Sources */,
 				D44BF83B21E0852800472B53 /* MyOrder.m in Sources */,
 				B806FD9A1DD5C1C7001BCACF /* YJTOOL.m in Sources */,
+				D41456A421E39F2700940340 /* ClassifyLogic.m in Sources */,
 				D44BF83121E0841800472B53 /* HomeScrollItem.m in Sources */,
 				D44BF7C721E081CD00472B53 /* BrandDetailVC.m in Sources */,
 				D44BF82721E0841700472B53 /* HomeButtomCell.m in Sources */,
@@ -2278,6 +2329,7 @@
 				B86736CB1DD58BC800C40425 /* Reachability.m in Sources */,
 				D44BF6FA21E073F900472B53 /* MeCell3.m in Sources */,
 				B8D277951E07E33C009643CD /* LYLiveGiftBarrageView.m in Sources */,
+				D41456AF21E3A1F200940340 /* ClassifyVO.m in Sources */,
 				D44BF87F21E085D300472B53 /* TuiKuangCell4.m in Sources */,
 				B84D359C1E5C2E6F0009D03A /* PLGoodsModel.m in Sources */,
 				D44BF82521E0841700472B53 /* CategorySearchBar.m in Sources */,
@@ -2285,6 +2337,7 @@
 				B8D3653F1DE5645300C1C01A /* DBManager.m in Sources */,
 				B86737881DD58C5000C40425 /* UIViewController+YJ.m in Sources */,
 				D44BF85B21E0857B00472B53 /* MyOrderCell3.m in Sources */,
+				D404BE0421E4F21200E2BCD1 /* DCBrandsSortHeadView.m in Sources */,
 				D4E0C7DE21E10D2500B6F6BB /* RegistVC0.m in Sources */,
 				D4E0C7E621E1143500B6F6BB /* BorderView.m in Sources */,
 				B86736D51DD58BDC00C40425 /* OTSCyclePageView.m in Sources */,
@@ -2333,6 +2386,7 @@
 				D44BF88A21E085EF00472B53 /* TuiKuangJinDuVC.m in Sources */,
 				D44BF78621E07FDE00472B53 /* LiveListViewModel.m in Sources */,
 				D44BF8D221E0B0EF00472B53 /* YJNav.m in Sources */,
+				D404BE0121E4F0AE00E2BCD1 /* DCGoodsSortCell.m in Sources */,
 				B8A53ADF1E5543BE0027BDFA /* UIViewController+create.m in Sources */,
 				D44BF76121E07BF700472B53 /* ChatCell.m in Sources */,
 				D44BF73521E07B5700472B53 /* ShopCartHeaderView.m in Sources */,
@@ -2346,7 +2400,6 @@
 				D44BF82821E0841700472B53 /* HomePageCell.m in Sources */,
 				B8D277991E07E514009643CD /* LYLiveGiftView.m in Sources */,
 				D44BF72E21E07B0300472B53 /* EditAddressVC.m in Sources */,
-				D423C1F021E211D4007DF322 /* LoginInterface.m in Sources */,
 				D44BF85921E0857B00472B53 /* MyOrderNilHeader.m in Sources */,
 				D44BF7A821E0815B00472B53 /* ChooseGoodsPropertyCell.m in Sources */,
 				D44BF78521E07FDE00472B53 /* LiveListModel.m in Sources */,
@@ -2361,6 +2414,7 @@
 				D44BF73621E07B5700472B53 /* ShopCartCell.m in Sources */,
 				B867378B1DD58C7600C40425 /* AppDelegate.m in Sources */,
 				D44BF74E21E07B9F00472B53 /* ConfirmOrderCell.m in Sources */,
+				D414569E21E39B0000940340 /* CategoryViewController.m in Sources */,
 				D44BF77D21E07F8200472B53 /* HomeModel2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
