@@ -14,6 +14,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "WXApiManager.h"
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -38,6 +39,68 @@
     [self.window makeKeyAndVisible];
 
     return YES;
+}
+
+-(void)iotConfig
+{
+    LKIoTConnectConfig * config = [LKIoTConnectConfig new];
+    config.productKey = @"a1OqSWWA7BM";
+    config.deviceName = @"WJMyrbcXQ9kXlTEoMjQq";
+    config.deviceSecret = @"0wVgAzgEIEfk4dQ8jFXobclUhJGqH0X5";
+    config.server = nil;//设为nil表示使用IoT平台作为连接服务器
+    //config.port = 1883;//your server port。如果server被设置为nil。则port也不要设置。
+    config.receiveOfflineMsg = YES;//如果希望收到客户端离线时的消息，可以设为YES.
+    [[LKIoTExpress sharedInstance] startConnect:config connectListener:self];
+    //如果config.server置为nil，则默认连接的地址为上海节点：${yourProductKey}.iot-as-mqtt.cn-shanghai.aliyuncs.com:1883`
+    
+    
+    [[LKIoTExpress sharedInstance] addDownstreamListener:LKExpressDownListenerTypeGw listener:self];
+    //downListener在本SDK中 是 weak reference，所以需要调用者保证生命周期。
+    
+    
+    
+    NSString *topic = @"/sys/a1OqSWWA7BM/WJMyrbcXQ9kXlTEoMjQq/app/down/event";
+    [[LKIoTExpress sharedInstance] subscribe:topic complete: ^(NSError * error) {
+        if (error != nil) {
+            NSLog(@"业务请求失败");
+        }
+    }];
+    
+    
+    
+//    NSString *topic = @"/sys/a1OqSWWA7BM/WJMyrbcXQ9kXlTEoMjQq/account/bind";
+//    NSDictionary *params = @{ @"iotToken": token};
+//    [[LKIoTExpress sharedInstance] invokeWithTopic:topic
+//                                              opts:nil
+//                                            params:params
+//                                       respHandler:^(LKExpressResponseHandler * _Nonnull response) {
+//                                           if (![response successed]) {
+//                                               NSLog(@"业务请求失败");
+//                                           }
+//                                       }];
+}
+
+///<topic-消息topic，data-消息内容,NSString 或者 NSDictionary
+-(void)onDownstream:(NSString *) topic data: (id _Nullable) data{
+    NSLog(@".......%@",topic);
+    NSLog(@".......%@",data);
+}
+
+///<数据使用onDownstream:data:上抛时，可以先过滤一遍，如返回NO，则不上传，返回YES，则会使用onDownstream:data:上抛
+-(BOOL)shouldHandle:(NSString *)topic{
+    return YES;
+}
+
+///<通道连接状况改变，参见枚举LKExpConnectState
+-(void)onConnectState:(LKExpressConnectState) state
+{
+    if (state == LKExpressConnectStateConnected) {
+        NSLog(@"已经连接。。。。");
+    }else if (state == LKExpressConnectStateDisconnected){
+        NSLog(@"失去连接。。。。");
+    }else if (state == LKExpressConnectStateConnecting){
+        NSLog(@"连接中。。。。");
+    }
 }
 
 - (void)endEditing

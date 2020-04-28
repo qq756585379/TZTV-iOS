@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AlinkIoTExpress/AlinkIoTExpress.h>
+#import <AlinkIoTExpress/LKIoTExpress.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,LKExpressConnectListener,LKExpressDownListener>
 
 @property (strong, nonatomic) UIWindow *window;
 

@@ -2160,6 +2160,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TZTV/Pods-TZTV-resources.sh",
+				"${PODS_ROOT}/IMLChannelCore/iot-mobichannelcore/AlinkIoTExpress.framework/cafile.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/KRVideoPlayer/KRVideoPlayer.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/PYSearch/PYSearch/PYSearch.bundle",
@@ -2169,6 +2170,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cafile.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/KRVideoPlayer.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PYSearch.bundle",
@@ -2552,7 +2554,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TZTV/ThirdPart/weixinPay",
 				);
-				GCC_PREFIX_HEADER = $SRCROOT/TZTV/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$SRCROOT/TZTV/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/TZTV",
 					"${PODS_ROOT}/PLPlayerKit/PLPlayerKit/lib/include",
@@ -2653,7 +2655,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TZTV/ThirdPart/weixinPay",
 				);
-				GCC_PREFIX_HEADER = $SRCROOT/TZTV/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$SRCROOT/TZTV/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/TZTV",
 					"${PODS_ROOT}/PLPlayerKit/PLPlayerKit/lib/include",

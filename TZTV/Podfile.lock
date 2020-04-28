@@ -34,6 +34,9 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - IMLChannelCore (1.1.1):
+    - IMSLog
+  - IMSLog (1.0.1)
   - KRVideoPlayer (1.0.1)
   - Masonry (1.0.2)
   - MBProgressHUD (1.1.0)
@@ -60,6 +63,7 @@ DEPENDENCIES:
   - BarrageRenderer
   - BlocksKit
   - FMDB
+  - IMLChannelCore
   - KRVideoPlayer
   - Masonry
   - MBProgressHUD
@@ -75,6 +79,9 @@ DEPENDENCIES:
   - YJHomeKit (from `../../YJHomeKit/`)
 
 SPEC REPOS:
+  https://github.com/aliyun/aliyun-specs.git:
+    - IMLChannelCore
+    - IMSLog
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
     - AFNetworking
@@ -104,6 +111,8 @@ SPEC CHECKSUMS:
   BarrageRenderer: 00e5f8081d81f29c1fc12712ddf2f875bd9c6f77
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  IMLChannelCore: d16647c6901fac406709915ff3d12e1bae9ce288
+  IMSLog: 00fbea067aa7b50c2d76d3fb920741bc0f5ab532
   KRVideoPlayer: 08918da1b99cae35fd4c15b2ec2b49358d4c985f
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -118,6 +127,6 @@ SPEC CHECKSUMS:
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YJHomeKit: 23feda6a3804e578c49d1e8e2e964e3ed0ba589d
 
-PODFILE CHECKSUM: c68fd9129ddfefee913f72278f49be87bf485b4e
+PODFILE CHECKSUM: d6b17901d74b89571df37ecdf0aa12c958dd025d
 
 COCOAPODS: 1.5.3
